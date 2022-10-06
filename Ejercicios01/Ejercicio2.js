@@ -1,3 +1,12 @@
+/* ---------------------------------------------------------------------------------------- 
+2. Realizar un programa que acepte valores hasta que se introduzca el valor 0. El programa
+nos mostrará: 
+a. Cuántos números se han introducido.
+b. El total de números pares.
+c. El total de números impares.
+d. La suma de todos ellos.
+------------------------------------------------------------------------------------------*/
+
 let valor, cadena;
 let contValores = 0;
 let contPares = 0;

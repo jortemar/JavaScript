@@ -1,3 +1,30 @@
+/*---------------------------------------------------------------
+8. Realizar un programa que “implemente” el funcionamiento de un Cajero Automático, con
+las siguientes características:
+a. Las operaciones que se podrán realizar son:
+MENU DEL CAJERO
+1. Sacar dinero.
+2. Ingresar dinero.
+3. Consultar saldo.
+4. Cambiar Contraseña.
+5. Salir.
+b. La operación para introducir la contraseña se realizará de forma automática
+siempre que el usuario comience a utilizar el cajero.
+c. Cada vez que el usuario realice una operación, se mostrará el resultado y volverá
+aparecer el menú.
+d. El cliente no podrá cometer más de tres errores en la introducción de la
+contraseña. En el caso de que el usuario cometa más de tres errores al introducir la
+contraseña, el programa acabará y no permitirá que el usuario acceda el menú del
+cajero.
+e. Cada vez que comience el programa el cliente del cajero siempre tendrá la misma
+contraseña. (por ejemplo: DAW2) A no ser que la cambie.
+f. Siempre que el usuario comience a utilizar el cajero tendrá 6.000 Euros en su
+cuenta.
+g. El cliente podrá sacar dinero siempre que tenga dinero suficiente.
+Intenta minimizar todo lo que puedas el uso de variables.
+Intenta utilizar variables locales siempre que puedas.
+---------------------------------------------------------------*/
+
 let num;
 let contraseña = "DAW2";
 let nuevaContraseña;

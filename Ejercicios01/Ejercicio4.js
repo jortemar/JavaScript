@@ -1,3 +1,9 @@
+/*----------------------------------------------------------------------------------
+4. Pedir dos números. Si los valores son numéricos e impares, mostrar la siguiente
+información:
+a. Valores pares entre los dos números introducidos.
+-----------------------------------------------------------------------------------*/
+
 let cad1 = prompt("Introduzca un número");
 let cad2 = prompt("Introduzca otro número");
 
@@ -14,4 +20,4 @@ if (typeof(num1, num2) == "number" && num1 % 2 != 0 && num2 % 2 != 0) {
         num1++; 
     }
 } else
-    document.write("Alguno de los números, o los dos, no son impares");
+    document.write("Alguno de los números, o los dos, no es impar");

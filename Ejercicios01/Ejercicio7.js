@@ -1,4 +1,11 @@
-let factorial = 2;
+/*---------------------------------------------------------------
+7. Calcula la factorial de un número entero n.
+Utilizando un for y también utilizando un while.
+El valor que nos introduzcan no podrá ser negativo, ni mayor de 150.
+e. ¿Qué sucede si introducimos un valor alto que desborde?
+---------------------------------------------------------------*/
+
+let factorial = 1;
 let n = 0;
 
 do {
@@ -8,43 +15,32 @@ do {
     n = parseInt(prompt("Introduzca un número"));
 } while (n < 0 || n > 150);
 
-for (let i = 3; i <= n; i++) {
+for (let i = 2; i <= n; i++) {
     factorial *= i;
 }
 
-function factorialFor(num) {
-    let resultado = 2;
-    for (let k = 3; k <= num; k++) {
-        resultado *= k;
-    }
-    return resultado;
-}
-
 document.write("El factorial de " + n + " es " + factorial + " (hecho con for) <br>");
-document.write("El factorial de " + n + " es " + factorialFor(n) + " (hecho con función for) <br>");
 
 /*-----------------
 Con ciclo while
 ------------------*/
 
-let j = 3;
-factorial = 2;
+let j = 2;
+factorial = 1;
 while (j <= n) {
     factorial *= j;
     j++;
 }
 
-function factorialWhile(num) {
-    let h = 3;
-    let resultado = 2;
-    while (h <= num) {
-        resultado *= h;
-        h++;
-    }
-    return resultado;
-}
-
 document.write("El factorial de " + n + " es " + factorial + " (hecho con while) <br>");
-document.write("El factorial de " + n + " es " + factorialWhile(n) + " (hecho con función while)");
 
-//Si el resultado es muy alto nos lo expresa en notación científica.
+/* Con función recursiva
+
+funcion factorial(x) {
+    if (x = 0) {
+        return 1;
+    } else 
+        return x * factorial(x-1);
+}*/
+
+//Si el resultado es muy alto puede llegar a saturar el sistema.
