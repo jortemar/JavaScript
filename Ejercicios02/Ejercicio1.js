@@ -58,6 +58,7 @@ provincias.push(datos);
 document.write("La suma de los dos arrays: " + provincias + "<br>");
 
 provincias.splice(provincias.indexOf(datos[0]),datos.length);
+
 document.write("El array de provincias vuelve a quedar así: " + provincias);
 
 
