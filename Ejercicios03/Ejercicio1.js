@@ -1,6 +1,12 @@
-let lista = new Array(10);
+let listaVacia = new Array(10);
+let listaLlena = llenarArray(listaVacia);
+listaLlena.forEach(function(valores) {
+    document.write(valores) + "<br>";
+});
 
 
+
+/*
 let num;
 
 do {    
@@ -60,14 +66,17 @@ do {
 
 } while (num <= 0 || num > 11);
 
+*/
 
-function crearArray(a){
+function llenarArray(a){
 
-    for(a of valor) {
-        a.push(Math.floor(Math.random() * 100));
-    }
+    a.forEach(function(valor) {
+        valor = Math.floor(Math.random() * 100);
+        a.push(valor);
+    })
     
-     
+    return a;
+    //a.forEach(a.push(Math.floor(Math.random() * 100)));
 }
 
 
