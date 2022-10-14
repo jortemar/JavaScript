@@ -36,7 +36,7 @@ document.write("El factorial de " + n + " es " + factorial + " (hecho con while)
 
 /* Con función recursiva
 
-funcion factorial(x) {
+function factorial(x) {
     if (x = 0) {
         return 1;
     } else 
