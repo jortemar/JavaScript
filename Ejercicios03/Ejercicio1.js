@@ -1,9 +1,8 @@
-//let listaVacia = new Array(10);
-//let listaLlena = llenarArray(listaVacia);
-let numeros = [] = inicializar();
-numeros.forEach(function(valores) {
-    alert(valores) + "<br>";
-});
+let numeros = [] = crearArray();
+alert("Array ordenado: " + numeros);
+
+
+/*
 
 let num;
 
@@ -78,16 +77,16 @@ function llenarArray(a){
 }
 */
 
+function crearArray() {
+    let arrayNumeros = [];
 
-function inicializar() {
-    let arrayNumeros=[];
     for (let i = 0; i < 10; i++) {
         arrayNumeros[i] = Math.floor(Math.random()*100);
     }
-    alert(arrayNumeros);
-    return(arrayNumeros.sort(function(a,b) {
+    alert("Array sin ordenar: " + arrayNumeros);
+    return (arrayNumeros.sort(function(a,b) {
         return a-b;
-    }))
+    }));
 }
 
 
@@ -99,8 +98,8 @@ lista.forEach(valor => resultado += valor);
 alert(resultado);
 */
 
-let result = numeros.reduce(a, b => a + b);
-alert("Suma de todos los números: " + result);
+//let result = numeros.reduce(a, b => a + b);
+//alert("Suma de todos los números: " + result);
 
 /*
 
@@ -116,8 +115,8 @@ for (lista of valor) {
 
 */
 
-let filtrados = numeros.filter(a => a % 2 == 0);
-alert("Números pares :" + filtrados);
+//let filtrados = numeros.filter(a => a % 2 == 0);
+//alert("Números pares :" + filtrados);
 
 /*
 
@@ -132,17 +131,17 @@ if (lista.contains(numero)) {
 
 */
 
-let numero = parseInt(prompt("Numero a buscar en el array"));
-if (!isNaN(numero)) {
-    let posicion = numeros.indexOf(numero);
+//let numero = parseInt(prompt("Numero a buscar en el array"));
+//if (!isNaN(numero)) {
+    //let posicion = numeros.indexOf(numero);
 
-    if(posicion != 1) {
-        alert("La primera posicion en el array del numero " + numero + "es la " + posicion);
-    } else 
-        alert("El número " + numero + " no se encuentra en el array");
+    //if(posicion != 1) {
+       // alert("La primera posicion en el array del numero " + numero + "es la " + posicion);
+    //} else 
+       // alert("El número " + numero + " no se encuentra en el array");
         
-} else
-    prompt("Valor incorrecto");
+//} else
+    //prompt("Valor incorrecto");
 
 
 
