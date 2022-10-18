@@ -1,12 +1,10 @@
-let listaVacia = new Array(10);
-let listaLlena = llenarArray(listaVacia);
-listaLlena.forEach(function(valores) {
-    document.write(valores) + "<br>";
+//let listaVacia = new Array(10);
+//let listaLlena = llenarArray(listaVacia);
+let numeros = [] = inicializar();
+numeros.forEach(function(valores) {
+    alert(valores) + "<br>";
 });
 
-
-
-/*
 let num;
 
 do {    
@@ -21,7 +19,7 @@ do {
                             "8. Realiza un proceso un número muy alto de veces, mostrando indice y valor" +
                             "9. Recorre el array sin bucles" +
                             "10. Construye un nuevo array con ciertas condiciones" +
-                            "11. Salir"));
+                            "11. Salir"),"0"); //valor por defecto: 0
     
     do {    
         switch(num) {
@@ -66,8 +64,8 @@ do {
 
 } while (num <= 0 || num > 11);
 
-*/
 
+/*
 function llenarArray(a){
 
     a.forEach(function(valor) {
@@ -78,28 +76,33 @@ function llenarArray(a){
     return a;
     //a.forEach(a.push(Math.floor(Math.random() * 100)));
 }
+*/
 
 
-/*
+function inicializar() {
+    let arrayNumeros=[];
+    for (let i = 0; i < 10; i++) {
+        arrayNumeros[i] = Math.floor(Math.random()*100);
+    }
+    alert(arrayNumeros);
+    return(arrayNumeros.sort(function(a,b) {
+        return a-b;
+    }))
+}
+
+
 //apartado A
-let lista = new Array(10);
-crearArray(lista);
-let resultado = 0;
-
-//do {
-  //  parseInt(numero)=prompt("Eliga una opción");
-//} while (numero > 4)
-
-lista.forEach(clave =>
-    document.write(clave)
-    );
-
-
 
 /*
+let resultado = 0;
 lista.forEach(valor => resultado += valor);
+alert(resultado);
+*/
 
-document.write(resultado);
+let result = numeros.reduce(a, b => a + b);
+alert("Suma de todos los números: " + result);
+
+/*
 
 //apartado B
 let nuevoArray;
@@ -111,33 +114,57 @@ for (lista of valor) {
     }
 }
 
+*/
+
+let filtrados = numeros.filter(a => a % 2 == 0);
+alert("Números pares :" + filtrados);
+
+/*
+
 //apartado C
 let posicion;
 numero = prompt("Introduzca un numero") + "<br>";;
 if (lista.contains(numero)) {
     posicion = lista.indexOf(numero);
-    document.write("El número " + numero + " está en la posición " + posicion) + "<br>";
+    alert("El número " + numero + " está en la posición " + posicion) + "<br>";
 } else
-    document.write("El número introducido no está en el array") + "<br>"; 
+    alert("El número introducido no está en el array") + "<br>"; 
 
+*/
+
+let numero = parseInt(prompt("Numero a buscar en el array"));
+if (!isNaN(numero)) {
+    let posicion = numeros.indexOf(numero);
+
+    if(posicion != 1) {
+        alert("La primera posicion en el array del numero " + numero + "es la " + posicion);
+    } else 
+        alert("El número " + numero + " no se encuentra en el array");
+        
+} else
+    prompt("Valor incorrecto");
+
+
+
+/*
 
 //apartado D
 if (lista.contains(0)) {
     for (lista of valor) {
-        document.write(valor) + "<br>";
+        alert(valor) + "<br>";
     }
 }
 
 //apartado E
 for (let indice = 0; indice <= lista.length; indice++) {
-    document.write("En la posición " + indice + " está el número " + lista[indice]) + "<br>";
+    alert("En la posición " + indice + " está el número " + lista[indice]) + "<br>";
 }
 
 //apartado F
 let arrayPorDos;
 for (lista of valor) {
     arrayPorDos.push(valor * 2);
-    document.write(valor) + "<br>";
+    alert(valor) + "<br>";
 }
 
 //apartado G
@@ -145,6 +172,6 @@ for (lista of valor) {
     if (valor <= 0) {
         break;
     } else
-    document.write(valor) + "<br>";
+    alert(valor) + "<br>";
 }
 */
