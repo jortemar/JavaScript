@@ -124,10 +124,7 @@ function apartadoE() {
 }
 
 function apartadoF() {
-    let arrayPorDos = [];
-    for (i in numeros) {
-        arrayPorDos.push(numeros[i] * 2);
-    }
+    arrayPorDos = numeros.map(a => a * 2); 
     alert("El nuevo array con las posiciones del anterior multiplicadas por dos queda así:\n" + 
     arrayPorDos + "\nmientras que el array original se mantiene así:\n" + numeros);
 }
