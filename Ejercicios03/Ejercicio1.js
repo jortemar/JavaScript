@@ -12,9 +12,11 @@ do {
                                 "   5. Muestra el contenido del array\n" +
                                 "   6. Obtén un nuevo array de los valores mutiplicados por dos\n" +
                                 "   7. Muestra el array si todos los valores son positivos\n" +
-                                "   8. Realiza un proceso un número muy alto de veces, mostrando indice y valor\n" +
+                                "   8. Realiza un proceso un número muy alto de veces, mostrando índice" +
+                                " y valor de la forma más efectiva\n" + 
                                 "   9. Recorre el array sin bucles\n" +
-                                "   10. Construye un nuevo array con ciertas condiciones\n" +
+                                "   10. Construye un nuevo array con números entre 10 y 20, si todos\n" +
+                                " los valores del array son positivos\n" +
                                 "   11. Salir"),"0"); //valor por defecto: 0
     
         switch(num) {
@@ -124,27 +126,37 @@ function apartadoE() {
 }
 
 function apartadoF() {
+    //.map aplica una condición sobre los valores de un array, y atrapa los nuevos valores en un nuevo array
     arrayPorDos = numeros.map(a => a * 2); 
     alert("El nuevo array con las posiciones del anterior multiplicadas por dos queda así:\n" + 
     arrayPorDos + "\nmientras que el array original se mantiene así:\n" + numeros);
 }
 
 function apartadoG() {
-    if (numeros[0] > 0) {
+    //.every comprueba si todos los valores del array cumplen una cierta condición. Devuelve un booleano
+    if (numeros.every(a => a > 0)) {
         alert("Todos los números del array son positivos\n" + 
                 "Array: " + numeros);
     } else
-        alert("El array contiene un cero");
+        alert("El array contiene al menos un cero");
 }
 
 function apartadoH() {
-    
+    alert("La forma más eficiente de recorrer un array, mostrando valor e índice, es el forEach");
+    numeros.forEach((valor, indice) => alert("La posición " + indice + " tiene el valor " + valor));
 }
 
 function apartadoI() {
-
+    alert("Con el método .slice podemos extraer elementos del array. No es lo más eficiente");
+    recorrerArrayAlternativa = numeros.slice(0);
+    alert(recorrerArrayAlternativa);
 }
 
+//Este último apartado no funciona bien. Hay que revisarlo
 function apartadoJ() {
-
+    if (numeros.every(a => a > 0)) {
+        nuevoArray = numeros.map(a => a >= 10 && a <= 20);
+        alert("El nuevo array está formado por " + nuevoArray);
+    } else
+        alert("Hay un cero en la primera posición, por lo que todos los números no son positivos");    
 }
