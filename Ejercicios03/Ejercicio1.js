@@ -152,11 +152,11 @@ function apartadoI() {
     alert(recorrerArrayAlternativa);
 }
 
-//Este último apartado no funciona bien. Hay que revisarlo
 function apartadoJ() {
     if (numeros.every(a => a > 0)) {
-        nuevoArray = numeros.map(a => a >= 10 && a <= 20);
-        alert("El nuevo array está formado por " + nuevoArray);
+        nuevoArray = numeros.filter(a => a >= 10 && a <= 20); 
+
+        alert("Todos los números son positivos, así que el nuevo array de números entre 10 y 20 está formado por " + nuevoArray);
     } else
         alert("Hay un cero en la primera posición, por lo que todos los números no son positivos");    
 }
