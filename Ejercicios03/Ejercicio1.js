@@ -3,21 +3,22 @@ alert("Array ordenado: " + numeros);
 
 let num;
 
-do {    
-    num = parseInt(prompt("Elija una opción con un número del 1 al 11:\n\n" +
-                            "   1. Suma los valores del array\n" +
-                            "   2. Obtén un nuevo array de mayores de 30\n" +
-                            "   3. Muestra si el array contiene un valor y su posición\n" +
-                            "   4. Muestra todos los valores, si hay alguno igual a 0\n" +
-                            "   5. Muestra el contenido del array\n" +
-                            "   6. Obtén un nuevo array de los valores mutiplicados por dos\n" +
-                            "   7. Muestra el array si todos los valores son positivos\n" +
-                            "   8. Realiza un proceso un número muy alto de veces, mostrando indice y valor\n" +
-                            "   9. Recorre el array sin bucles\n" +
-                            "   10. Construye un nuevo array con ciertas condiciones\n" +
-                            "   11. Salir"),"0"); //valor por defecto: 0
+do {  
+    do {
+        num = parseInt(prompt("Elija una opción con un número del 1 al 11:\n\n" +
+                                "   1. Suma los valores del array\n" +
+                                "   2. Obtén un nuevo array solo con los números pares\n" +
+                                "   3. Muestra si el array contiene un valor y su posición\n" +
+                                "   4. Muestra todos los valores, si hay alguno igual a 0\n" +
+                                "   5. Muestra el contenido del array\n" +
+                                "   6. Obtén un nuevo array de los valores mutiplicados por dos\n" +
+                                "   7. Muestra el array si todos los valores son positivos\n" +
+                                "   8. Realiza un proceso un número muy alto de veces, mostrando indice y valor\n" +
+                                "   9. Recorre el array sin bucles\n" +
+                                "   10. Construye un nuevo array con ciertas condiciones\n" +
+                                "   11. Salir"),"0"); //valor por defecto: 0
     
-    do {    
+       
         switch(num) {
             case 1:
                 apartadoA();
@@ -54,18 +55,16 @@ do {
                 break;
             default:
                 alert("El número introducido no está comprendido entre 1 y 11");
-                break;  // Esto hay que arreglarlo. No funciona bien
         }
 
     } while (num != 11);       
 
 } while (num <= 0 || num > 11);
 
-
 function crearArray() {
     let arrayNumeros = [];
     
-    for (let i = 0; i < 10; i++) {
+    for (i = 0; i < 10; i++) {
         arrayNumeros[i] = Math.floor(Math.random()*100);
     }
     
@@ -79,86 +78,80 @@ function crearArray() {
     }));
 }
 
-
 function apartadoA() {
     let resultado = 0;
-    lista.forEach(function(valor) {resultado += valor});
-    alert(resultado);   
-}
-
-//let result = numeros.reduce(a, b => a + b);
-//alert("Suma de todos los números: " + result);
-
-/*
-
-//apartado B
-let nuevoArray;
-lista.forEach(valor => {if(valor >= 5) nuevoArray.push(valor);
-
-for (lista of valor) {
-    if (valor >= 5) {
-        nuevoArray.push(valor);
+    
+    for (i in numeros) {
+        resultado += numeros[i];
     }
+    
+    //resultado = numeros.reduce((a, b) => a + b);
+
+    /* El método .reduce reduce el array a un único valor, recorriendo sus posiciones y 
+    tratando los datos en función de lo que le marquemos */
+
+    alert("La suma de todos los números del array es: " + resultado);
 }
 
-*/
-
-//let filtrados = numeros.filter(a => a % 2 == 0);
-//alert("Números pares :" + filtrados);
-
-/*
-
-//apartado C
-let posicion;
-numero = prompt("Introduzca un numero") + "<br>";;
-if (lista.contains(numero)) {
-    posicion = lista.indexOf(numero);
-    alert("El número " + numero + " está en la posición " + posicion) + "<br>";
-} else
-    alert("El número introducido no está en el array") + "<br>"; 
-
-*/
-
-//let numero = parseInt(prompt("Numero a buscar en el array"));
-//if (!isNaN(numero)) {
-    //let posicion = numeros.indexOf(numero);
-
-    //if(posicion != 1) {
-       // alert("La primera posicion en el array del numero " + numero + "es la " + posicion);
-    //} else 
-       // alert("El número " + numero + " no se encuentra en el array");
-        
-//} else
-    //prompt("Valor incorrecto");
-
-
-
-/*
-
-//apartado D
-if (lista.contains(0)) {
-    for (lista of valor) {
-        alert(valor) + "<br>";
-    }
+function apartadoB() {  
+    //el método filter devuelve un array. No es necesario declararlo
+    numerosPares = numeros.filter(a => a % 2 == 0); 
+    alert("Los números pares del array son: " + numerosPares);
 }
 
-//apartado E
-for (let indice = 0; indice <= lista.length; indice++) {
-    alert("En la posición " + indice + " está el número " + lista[indice]) + "<br>";
-}
+function apartadoC() {
+    let numIntro;
+    do {
+        numIntro = parseInt(prompt("Introduzca un número para comprobar si se encuentra en el array"));   
+    } while (isNaN(numIntro));
 
-//apartado F
-let arrayPorDos;
-for (lista of valor) {
-    arrayPorDos.push(valor * 2);
-    alert(valor) + "<br>";
-}
-
-//apartado G
-for (lista of valor) {   
-    if (valor <= 0) {
-        break;
+    //El método devuelve -1 si el .indexOf no encuentra el número
+    let posicion = numeros.indexOf(numIntro);
+    if (posicion != -1) { 
+        alert("El número " + numIntro + " está en el array en la posición " + posicion);
     } else
-    alert(valor) + "<br>";
+        alert("El número " + numIntro + " no se encuentra en el array");
 }
-*/
+
+function apartadoD() {
+    if (numeros.includes(0)) {
+        alert("El array tiene un 0 en la primera posición\n" + 
+                "Contenido del array: " + numeros);
+    } else
+        alert("El array no contiene el número 0");
+}
+
+function apartadoE() {
+    let mensaje = "";
+    numeros.forEach(valor => mensaje += valor + " ");
+    alert(mensaje);
+}
+
+function apartadoF() {
+    let arrayPorDos = [];
+    for (i in numeros) {
+        arrayPorDos.push(numeros[i] * 2);
+    }
+    alert("El nuevo array con las posiciones del anterior multiplicadas por dos queda así:\n" + 
+    arrayPorDos + "\nmientras que el array original se mantiene así:\n" + numeros);
+}
+
+function apartadoG() {
+    if (numeros[0] > 0) {
+        alert("Todos los números del array son positivos\n" + 
+                "Array: " + numeros);
+    } else
+        alert("El array contiene un cero");
+}
+
+function apartadoH() {
+    
+}
+
+function apartadoI() {
+
+}
+
+function apartadoJ() {
+    
+}
