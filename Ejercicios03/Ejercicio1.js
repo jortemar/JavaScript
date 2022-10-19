@@ -1,6 +1,5 @@
 let numeros = [] = crearArray();
 alert("Array ordenado: " + numeros);
-
 let num;
 
 do {  
@@ -18,7 +17,6 @@ do {
                                 "   10. Construye un nuevo array con ciertas condiciones\n" +
                                 "   11. Salir"),"0"); //valor por defecto: 0
     
-       
         switch(num) {
             case 1:
                 apartadoA();
@@ -56,9 +54,7 @@ do {
             default:
                 alert("El número introducido no está comprendido entre 1 y 11");
         }
-
     } while (num != 11);       
-
 } while (num <= 0 || num > 11);
 
 function crearArray() {
@@ -153,5 +149,5 @@ function apartadoI() {
 }
 
 function apartadoJ() {
-    
+
 }
