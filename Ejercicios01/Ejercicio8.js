@@ -27,7 +27,6 @@ Intenta utilizar variables locales siempre que puedas.
 
 let num;
 let contraseña = "DAW2";
-let nuevaContraseña;
 let saldo = 6000;
 
 if (introducirContraseña()) {
@@ -101,7 +100,7 @@ function consultarSaldo() {
 function cambiarContraseña() {
 
     if (introducirContraseña()) {
-        nuevaContraseña = prompt("Introduzca su nueva contraseña");
+        let nuevaContraseña = prompt("Introduzca su nueva contraseña");
         if (nuevaContraseña == prompt("Introduzca otra vez su nueva contraseña")){
             contraseña = nuevaContraseña;
             alert("Su nueva contraseña es " + contraseña);

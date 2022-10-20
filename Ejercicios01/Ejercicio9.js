@@ -11,15 +11,69 @@ muestra el mes y no podremos utilizarlo fuera de él.
 e. (Cuando veamos arrays Si la fecha introducida es correcta mostraremos la fecha
 con el siguiente formato:
 ---------------------------------------------------------------*/
+
+const MES_31 = [1, 3, 5, 7, 8, 10, 12];
+const MES_30 = [4, 6, 9, 11];
+
+let dia, mes, año;                    
+let añoBisiesto = false;
+
+do {    
+    dia = parseInt(prompt("Introduzca el día"));
+} while (dia < 1);
+
+do {
+    mes = parseInt(prompt("Introduzca el mes con un número del 1 al 12"));
+} while (mes < 1 || mes > 12);    
+
+do {
+    año = parseInt(prompt("Introduzca el año"));
+} while (año < 1);
+
+
+if (bisiesto(año) && mes == 2 && dia <= 29) {
+    alert("La fecha introducida es: " + dia + " de " + asignarNombreMes(mes) + " de " + año);
+} else if ((MES_31.includes(mes) && dia <= 31) || (MES_30.includes(mes) && dia <= 30) || (mes == 2 && dia <= 28)) {
+    alert("La fecha introducida es: " + dia + " de " + asignarNombreMes(mes) + " de " + año);
+} else
+    alert("La fecha es incorrecta");
+
+    
+function bisiesto(añoEntrada) {
+    if (añoEntrada % 4 == 0) {
+        return true;
+    }
+}
+
+function asignarNombreMes(mesEntrada) {
+    const NOMBRE_MES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
+                    "septiembre", "octubre", "noviembre", "diciembre"];
+
+    return NOMBRE_MES[mesEntrada];
+}
+
+
+
+
+
+
+
+
+
+
+/*
 let dia, mes, año;
 let mesBoolean = true;
+
 dia = parseInt(prompt("Introduzca el día"));
 if (mesBoolean) { 
     mes = parseInt(prompt("Introduzca el mes"));
     if (1 < mes < 12) {
         mesBoolean = false;
-    }
+    } else
+        alert("El mes debe estar comprendido entre el 1 y el 12")
 }
+
 año = parseInt(prompt("Introduzca el año"));
 let mes31 = [1, 3, 5, 7, 8, 10, 12];
 let mes30 = [4, 6, 9, 11];
@@ -42,3 +96,4 @@ if (mes31.includes(mes)) {
         dia = parseInt(prompt("Este mes tiene un máximo de 29 dias. Vuelva a introducir el día"));
     } else
         dia = parseInt(prompt("Este mes tiene un máximo de 28 dias. Vuelva a introducir el día"));
+*/
