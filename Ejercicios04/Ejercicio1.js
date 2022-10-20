@@ -21,10 +21,19 @@ let entradaDatos = prompt("Introduzca un número o escriba 'fin' para terminar")
 
 while (entradaDatos.toLowerCase() != "fin") {
     numeros.push(parseFloat(entradaDatos));
-
 } 
-
-
 
 //apartado A
 alert("Las tres primeras posiciones del array son " + numeros.slice(0,3));
+
+//apartado B
+if (numeros.lenght > 5) {
+
+}
+    for (i in numeros) {
+        if (i%2 == 0) {
+            
+        }
+    }
+
+//apartado C
