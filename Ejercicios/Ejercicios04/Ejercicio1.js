@@ -16,6 +16,78 @@ g. Si el array contiene el valor 10, crear un duplicado del array.
     anteriores comprobando su resultado.
 *************************************************************/
 
+let opcion;
+do {
+    do {
+        opcion = parseInt(prompt("Elija una opción para ejecutar sobre el array\n " +
+                                    "1. Crea otro array con las tres primeras posiciones\n" +
+                                    "2. Si tiene más de 5 elementos, mostrar las posiciones pares\n" +
+                                    "3. Muestra el producto de los valores pares\n" +
+                                    "4. Si todos los valores son pares y positivos, mostrar el array\n" +
+                                    "5. Si hay algún valor par y menor que 10, se añade al array todos\n" +
+                                    "los valores desde el valor par hasta 10\n" +
+                                    "6. Invierte el array original\n" +
+                                    "7. Si el array contiene el valor 10, crea un duplicado del array\n" +
+                                    "8. Salir"));
+
+    } while (opcion < 1 || opcion > 8);
+} while (opcion != 8);
+
+switch (opcion) {
+    case 1:
+        apartadoA();
+        break;
+    case 2:
+        apartadoB();
+        break;
+    case 3:
+        apartadoC();
+        break;
+    case 4:
+        apartadoD();
+        break;
+    case 5:
+        apartadoE();
+        break;
+    case 6:
+        apartadoF();
+        break;
+    case 7:
+        apartadoG();
+        break;
+    default:
+        prompt("Introduzca un valor entre 1 y 8");
+}
+
+let arrayNumeros = [];
+function crearArray() {
+    
+}
+
+function apartadoA() {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
 let numeros = [];
 let entradaDatos = prompt("Introduzca un número o escriba 'fin' para terminar");
 
@@ -111,4 +183,4 @@ function inicializar() {
     return(arrayNumeros.sort(function(a,b){return a-b;}));
 
     //alert(arrayPares).sort...
-}
+}*/
