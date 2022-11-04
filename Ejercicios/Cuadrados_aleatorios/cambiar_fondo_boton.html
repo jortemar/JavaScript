@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<h1>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <h1 id="prueba">CAMBIO DE FONDO CON SET INTERVAL</h1>
+    <button onclick="startColorFondo()">Start</button>
+    <button onclick="stopColorFondo()">Stop</button>
+</body>
+
+<script type="text/javascript">
+    function cambiarColorFondo() {
+
+        let rojo,verde,azul;
+        rojo = Math.floor(Math.random()*256);
+        verde = Math.floor(Math.random()*256);
+        azul = Math.floor(Math.random()*256);
+        document.getElementById('body').style.backgroundColor = `rgb(${rojo},${verde},${azul})`;
+    }
+
+    function startColorFondo() {
+        if (!myInterval) {
+            myInterval = setInterval(cambiarColorFondo, 25e-10);
+        }
+    }
+
+    function stopColorFondo() {
+        clearInterval(myInterval);
+        myInterval = null;
+    }
+
+    let myInterval;
+    
+
+</script>
+</html>
