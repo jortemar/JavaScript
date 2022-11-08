@@ -1,0 +1,67 @@
+body{
+    background-image: url(Recursos/images/fondo1.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.contenedor {
+    position: relative;
+    height: 90vh;
+    width: 70vw;
+    background-image: url(Recursos/images/pinzas2.jpg);
+    margin: auto;
+}
+
+
+.div-1 {
+
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header-title {
+    background-color: rgba(33,33,33,0.5);
+}
+
+footer {
+    opacity:30%;
+}
+
+.header_title {
+    text-align:center;
+}
+
+.footer_title {
+    text-align:right;
+}
+
+.img1 {
+    position:absolute;
+    margin:auto;
+    width:50%;
+    height: 50%;
+    top:100px;
+}
+
+.img2 {
+    position:absolute;
+    margin:auto;
+    width:50%;
+    height: 50%;
+    left:30px;
+}
+
+.img3 {
+    position:absolute;
+    margin:auto;
+    right:30px;
+    width:50%;
+    height: 50%;
+}
+
+.img4 {
+    position:absolute;
+    margin:auto;
+    bottom:30px;
+    width:50%;
+    height: 50%;
+}
