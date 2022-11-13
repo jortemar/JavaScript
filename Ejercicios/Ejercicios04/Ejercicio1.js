@@ -1,186 +1,157 @@
-/************************************************************
-1. Indica como se pueden realizar las siguientes acciones:
-
-a. Crea un nuevo array con las tres primeras posiciones del array.
-b. Si un array tiene más de 5 elementos, mostrar las posiciones pares del array.
-c. Mostrar el producto de los valores pares.
-d. Si todos los valores de un array son pares y positivos mostrar el producto
-    de todos los valores del array.
-e. Si tenemos un array que contiene algún valor par y menor que 10. Añade
-    al array todos los valores, que haya desde el valor par hasta 10.
-f. Transforma el array para que contenga los mismos valores, pero en orden
-    inverso al que estaban la ser creado.
-g. Si el array contiene el valor 10, crear un duplicado del array.
-
-2. Declara un array de tipo numérico y realiza cada uno de los ejercicios
-    anteriores comprobando su resultado.
-*************************************************************/
-
+let numeros = crearArray();
+/*Utilizo la clase Array para copiar el array, ya que si utilizo = se crea solo una referencia
+y se cambia el contenido de la copia al modificar el original*/
+let arrayRep = Array.from(numeros);
+let arrayDup, contador, numPos;
 let opcion;
 do {
     do {
-        opcion = parseInt(prompt("Elija una opción para ejecutar sobre el array\n " +
-                                    "1. Crea otro array con las tres primeras posiciones\n" +
-                                    "2. Si tiene más de 5 elementos, mostrar las posiciones pares\n" +
-                                    "3. Muestra el producto de los valores pares\n" +
-                                    "4. Si todos los valores son pares y positivos, mostrar el array\n" +
-                                    "5. Si hay algún valor par y menor que 10, se añade al array todos\n" +
+        opcion = parseInt(prompt("Elija una opción para ejecutar sobre el array\n\n" +
+                                    "   1. Crea otro array con las tres primeras posiciones\n" +
+                                    "   2. Si tiene más de 5 elementos, mostrar las posiciones pares\n" +
+                                    "   3. Muestra el producto de los valores pares\n" +
+                                    "   4. Si todos los valores son pares y positivos, muestra el\n" +
+                                    "producto de los valores del array\n" +
+                                    "   5. Si hay algún valor par y menor que 10, se añade al array todos\n" +
                                     "los valores desde el valor par hasta 10\n" +
-                                    "6. Invierte el array original\n" +
-                                    "7. Si el array contiene el valor 10, crea un duplicado del array\n" +
-                                    "8. Salir"));
+                                    "   6. Invierte el array original\n" +
+                                    "   7. Si el array contiene el valor 10, crea un duplicado del array\n" +
+                                    "   8. Muestra cuántos elementos del array son positivos\n" +
+                                    "   9. Salir"),"0"); //Valor por defecto 0
 
-    } while (opcion < 1 || opcion > 8);
-} while (opcion != 8);
+        switch (opcion) {
+            case 1:
+                apartadoA();
+                break;
+            case 2:
+                apartadoB();
+                break;
+            case 3:
+                apartadoC();
+                break;
+            case 4:
+                apartadoD();
+                break;
+            case 5:
+                apartadoE();
+                break;
+            case 6:
+                apartadoF();
+                break;
+            case 7:
+                apartadoG();
+                break;
+            case 8:
+                apartadoH();
+                break;
+            case 9:
+                alert("Gracias por utilizar este programa");
+                break;
+            default:
+                alert("Introduzca un valor entre 1 y 9");
+        }                                
 
-switch (opcion) {
-    case 1:
-        apartadoA();
-        break;
-    case 2:
-        apartadoB();
-        break;
-    case 3:
-        apartadoC();
-        break;
-    case 4:
-        apartadoD();
-        break;
-    case 5:
-        apartadoE();
-        break;
-    case 6:
-        apartadoF();
-        break;
-    case 7:
-        apartadoG();
-        break;
-    default:
-        prompt("Introduzca un valor entre 1 y 8");
-}
+    } while (opcion < 1 || opcion > 9);
+} while (opcion != 9);
 
-let arrayNumeros = [];
+
 function crearArray() {
-    
+    let arrayNum = [];
+    for(i = 0; i < 10; i++) {
+        arrayNum[i] = (Math.floor(Math.random() * 21));
+    }
+    alert(`El array se ha creado con éxito: ${arrayNum}`);
+    return arrayNum;
 }
 
+//a. Crea un nuevo array con las tres primeras posiciones del array.
 function apartadoA() {
-
+    alert("Las tres primeras posiciones del array son " + numeros.slice(0,3));
 }
 
+//b. Si un array tiene más de 5 elementos, mostrar las posiciones pares del array.
+function apartadoB() {
+    let frase;
+    if (numeros.length >= 5) {
+        frase = "Los números pares del array son ";
+        for (i in numeros) {
+            if (numeros[i] % 2 == 0) {
+                frase += numeros[i] + ", ";  
+            }
+        }
+    } else
+        frase = "El array tiene cinco o menos elementos";
 
+    alert(frase);    
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-let numeros = [];
-let entradaDatos = prompt("Introduzca un número o escriba 'fin' para terminar");
-
-while (entradaDatos.toLowerCase() != "fin") {
-    numeros.push(parseFloat(entradaDatos));
-} 
-
-//apartado A
-alert("Las tres primeras posiciones del array son " + numeros.slice(0,3));
-
-//apartado B
-if (numeros.lenght > 5) {
-
-
-    for (i in numeros) {
-        if (i%2 == 0) {
-            posicionesPares.push(numeros[i]);
+//c. Mostrar el producto de los valores pares.
+function apartadoC() {
+    alert("El producto de los valores pares del array es " + numeros.filter(a => a % 2 == 0).reduce((a, b) => a * b));
+    /*
+    let producto = 1;
+    for (i in numeros) {    
+        if (numeros[i] % 2 == 0) {
+            producto *= numeros[i]; 
         }
     }
-    alert ("Valores en posiciones pares");
 
-} else
-    alert("");
-
-
-//apartado C
-function cb(a) {
-    if (a % 2 == 0) {
-        return a;
-    } else {
-        return 1};
+    alert(`El producto de los valores pares del array es ${producto}`);
+    */
 }
 
-alert ("Producto de valores pares arrray " + productosPares);
+//d. Si todos los valores de un array son pares y positivos mostrar el producto
+//    de todos los valores del array.
+function apartadoD() {
+    if (numeros.every(a => a % 2 == 0 && a > 0)) {
+        alert(`El producto de los valores pares del array es ${numeros.reduce((a, b) => a * b)}`);
+    } else
+        alert("Uno o más de un número del array no es positivo o impar");
+}
 
-//apartadoD
-if (numeros.every((currentValue) => currentValue >= 0 && currentValue % 2 == 0)) {
-    let producto = numeros.reduce(function(a,b) {return a*b;},1);
-    alert("Producto de los valores del array: " + producto);
+//e. Si tenemos un array que contiene algún valor par y menor que 10. Añade
+//    al array todos los valores, que haya desde el valor par hasta 10.
+function apartadoE() {
+    if (numeros.some(a => a % 2 == 0 && a < 10)) {
+        for (i in numeros) {
+            if (numeros[i] % 2 == 0 && numeros[i] < 10) {
+                for (j = numeros[i]; j <= 10; j++) {
+                    numeros.push(j);
+                }
+                break;                                    
+            } 
+        }
 
-} else  
-    alert("No todos los valores son pares o mayores que cero");
+        alert(`El array, con los nuevos valores añadidos, ha quedado así ${numeros}`);
+    } else
+        alert("El array no contiene valores pares y menores que 10");
+}
 
-//apartadoE
-if (numeros.some(a=>a%2==0 && a<10){
-    result=numeros.filter(a=>a%2==0 && a < 10);
-    let valor = result[0];
-    for (let i=valor; i <= 10; i ++) {
-        numeros.push(i);
+//f. Transforma el array para que contenga los mismos valores, pero en orden
+//    inverso al que estaban al ser creado.
+function apartadoF() {
+    alert(`El array original invertido quedaría así ${arrayRep.reverse()}`);
+}
+
+//g. Si el array contiene el valor 10, crear un duplicado del array.
+function apartadoG() {
+    if (numeros.includes(10)) {
+        arrayDup = numeros;
+        alert(`Se ha creado un duplicado del array: ${arrayDup}`);
+    } else
+        alert("El array no contiene el valor 10");
+}
+
+//h. Mostrar cuántos elementos del array son positivos
+function apartadoH() {
+    contador = 0;
+    numPos = "";
+    for (i in numeros) {
+        if (numeros[i] > 0) {
+            contador++;
+            numPos += `${numeros[i]}, `
+        }
     }
-    alert(numeros);
-} else
-    alert("No existe un valor par menor de diez");
 
-
-//apartado seis
-numeros = numeros.reverse();
-alert(numeros);
-
-
-// apartado siete
-if (numeros.some(a => a ==10)) {
-    alert("El array contiene el número 10");
-    duplicado = numeros.slice();
-    alert("Muestro el duplicado: " + duplicado);
-} else
-    alert("El array no contiene el número 10");
-
-
-// apartado ocho
-duplicado = numeros.filter(a => a >= 0 );
-alert("El array contiene " + duplicado.lenght + " números positivos");
-
-// apartado nueve() {
-    let mensaje = "Contenido del Array: \n";
-    numeros.forEach(element => {
-        mensaje += element+ ",";
-    });
-    alert(mensaje);
-
-
-function inicializar() {
-    let arrayNumeros = [];
-    let arrayPares = [];
-    for (let i = 0; i < 20; i ++) {
-        numeros[i]= i + 1;
-        arrayNumeros[i] = Math.floor(Math.random()*100);
-        arrayPares[i] = Math.floor(Math.random() * 10)*2;
-
-    }
-    //function(a,b){return a - b;}
-    alert(arrayNumeros.sort(function(a,b){return a-b;}));
-    return(arrayNumeros.sort(function(a,b){return a-b;}));
-
-    //alert(arrayPares).sort...
-}*/
+    alert(`Hay ${contador} elementos positivos en el array: ${numPos}`);
+}

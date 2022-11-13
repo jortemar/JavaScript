@@ -56,8 +56,8 @@ do {
             default:
                 alert("El número introducido no está comprendido entre 1 y 11");
         }
-    } while (num != 11);       
-} while (num <= 0 || num > 11);
+    } while (num <= 0 || num > 11);       
+} while (num != 11);
 
 function crearArray() {
     let arrayNumeros = [];
