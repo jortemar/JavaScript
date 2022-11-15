@@ -1,21 +1,14 @@
 /*
-let mcs = 0.000001;
+1. Sumar números desde prompt
 
-if (mcs == 1e-6) {
-    alert("Es lo mismo");
-} else
-    alert("No es lo mismo");
-
-alert(0.1 + 0.2 == 0.3);
-alert(0.1 + 0.2);
+Crea un script que pida al visitante que ingrese dos números y muestre su suma.
+P.D. Hay una trampa con los tipos de valores.
 */
 
-/*
-let sum = 0.1 + 0.2;
-// el operarador unario + convierte lo que sea en un número
-sum = +sum.toFixed(2);
-alert(sum);
-alert(typeof sum);
-*/
+alert("Vamos a realizar una suma");
+let num1 = parseFloat(prompt("Introduzca el primer sumando"));
+let num2 = parseFloat(prompt("Introduzca el segundo sumando"));
+let resultado = num1 + num2;
+resultado = Math.round(resultado * 1e6) / 1e6; //aceptaría hasta seis cifras decimales
 
-alert(9999999999999999);
+alert(`El resultado de la suma es ${resultado}`);
