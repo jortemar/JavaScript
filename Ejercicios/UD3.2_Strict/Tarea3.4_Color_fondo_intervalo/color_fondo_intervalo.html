@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=<h1>, initial-scale=1.0">
+        <title>Cambio color fondo en intervalos</title>
+    </head>
+
+    <body id="body"> <!-- aquí se va a insertar la línea que se genera en cambiarColorFondo()-->
+        <h1 id="prueba">CAMBIO DE FONDO CON SET INTERVAL</h1>
+        <button onclick = "startColorFondo()" > Start </button>
+        <button onclick = "stopColorFondo()" > Stop </button>
+    </body>
+
+    <script type="text/javascript">
+        function cambiarColorFondo() {
+            let rojo,verde,azul;
+
+            rojo = Math.floor(Math.random()*256);
+            verde = Math.floor(Math.random()*256);
+            azul = Math.floor(Math.random()*256);
+
+            document.getElementById('body').style.backgroundColor = `rgb(${rojo},${verde},${azul})`;
+        }
+
+        let myInterval;
+
+        function startColorFondo() {
+            if (!myInterval) {
+                myInterval = setInterval(cambiarColorFondo, 25e-10);
+            }
+        }
+
+        /*
+        clearInterval() detiene el intervalo. Después volvemos a establecer null
+        en nuestra variable 'myInterval' (de tipo 'intervalID'), para que
+        se pueda cumplir la condición de entrada en caso de querer volver a activar
+        la función startColorFondo()
+        */
+
+        function stopColorFondo() {
+            clearInterval(myInterval);
+            myInterval = null;
+        }
+
+    </script>
+</html>
