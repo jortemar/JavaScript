@@ -22,14 +22,9 @@ las multiplicaciones el error al final se va a acabar manifestando en decimales 
 
 let i = 0;
 
-//alert(Math.round(0.2 * 10) / 10);
-
-
 while (i != 10) {
-    i += (Math.round(0.2 * 10) / 10);
-    i = Math.round((i * 10) / 10); 
-    alert(`El valor de i es ${i}`);
-
+    i += 0.2;
+    i = +i.toFixed(1); 
 }
 
 alert(`El bucle ha llegado a su fin. El valor de i es ${i}`);

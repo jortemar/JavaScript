@@ -10,5 +10,18 @@ Ejemplos de funcionamiento:
 alert( randomInteger(1, 5) ); // 1
 alert( randomInteger(1, 5) ); // 3
 alert( randomInteger(1, 5) ); // 5
-
 */
+
+function randomInteger(min, max) {
+    let numeros = "";
+    
+    for (i = 0; i <= 10; i++) {
+        numeros += Math.floor(Math.random() * (max - min + 1) + min) + ", ";
+    }
+
+    alert(numeros);
+}
+
+let numMin = parseInt(prompt("Introduzca el valor mínimo"));
+let numMax = parseInt(prompt("Introduzca el valor máximo"));
+randomInteger(numMin, numMax);
