@@ -1,4 +1,4 @@
-let sistemaSolar = [];
+/*let sistemaSolar = [];
 sistemaSolar[0] = "Mercurio";
 sistemaSolar[1] = "Venus";
 sistemaSolar[2] = "Tierra";
@@ -90,4 +90,11 @@ let sistemaSolarSlice = sistemaSolar.slice(3,5);
 
 //sort (ordena)
 sistemaSolar.sort();
+*/
 
+let numeros = "";
+
+for (i = 0; i <= 20; i++) {
+    numeros += Math.floor(Math.random() * 101) + ", ";
+}
+alert(numeros);
