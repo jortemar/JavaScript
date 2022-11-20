@@ -17,9 +17,8 @@ keys.push("Morfero");
 
 let map = new Map();
 map.set("name", "Cora");
-let keys = map.keys();
-// Error: keys.push no es una función
-for (pal of map.keys()) {
-    keys.push(pal);
-}
+/*let keys = map.keys();
+keys es un iterable, pero no necesariamente un array, por lo que no permite utilizar
+los métodos habituales de array. Podemos convertirlo utilizando la clase Array.*/
+let keys = Array.from(map.keys());
 keys.push("Morfero");

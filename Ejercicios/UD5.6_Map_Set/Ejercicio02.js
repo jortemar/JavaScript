@@ -19,7 +19,8 @@ clave en un map, si la clave existe no se añadirá de nuevo al map.
 
 function aclean() {
     let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
-    /*Map nos permite crear colecciones de objetos (formados por clave y valor)
+    /*Map nos permite crear colecciones de objetos (formados por clave y valor).
+    Además, permite claves de cualquier tipo en cualquiera de sus posiciones (incluso objetos).
     En este ejercicio nos va a ayudar a asociar la palabra ordenada (clave) con 
     el valor real de esa clave, que será la palabra original (valor) */
     let coleccionLimpia = new Map();
