@@ -1,13 +1,21 @@
-const company = {
-    name: "Alpiste S.A.",
-    address: "Calle Sagasta, 87",
-    phone: 968782254,
-    CIF: "B2256984"
-}
+export class Company extends Data {
+    #cif;
 
-const customer = {
-    name: "Jose Ortega",
-    address: "Calle Calvario, 7",
-    phone: 968758250,
-    NIF: "55588412F"
+    constructor(name, address, phone, cif) {
+        super(name, address, phone);
+        this.#cif = cif;
+    }
+
+    get aboutCif() {
+        return this.#cif;
+    }
+    set aboutCif(cif) {
+        this.#cif = cif;
+    }
+
+    toString() {
+        return "EMPRESA \n" + 
+                super.toString() + '\n' +
+                "CIF: " + this.#cif;
+    }
 }
