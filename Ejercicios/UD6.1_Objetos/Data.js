@@ -1,4 +1,4 @@
-class Data {
+export class Data {
     #name;
     #address;
     #phone;
@@ -9,24 +9,24 @@ class Data {
         this.#phone = phone;
     }
 
-    get aboutName() {
+    get name() {
         return this.#name;
     }
-    set aboutName(name) {
+    set name(name) {
         this.#name = name;
     }
 
-    get aboutAddress() {
+    get address() {
         return this.#address;
     }
-    set aboutAddress(address) {
+    set address(address) {
         this.#address = address;
     }
 
-    get aboutPhone() {
+    get phone() {
         return this.#phone;
     }
-    set aboutPhone(phone) {
+    set phone(phone) {
         this.#phone = phone;
     }
 

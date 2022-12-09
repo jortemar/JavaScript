@@ -1,3 +1,5 @@
+import {Data} from "./Data.js";
+
 export class Customer extends Data {
     #nif;
 
@@ -6,11 +8,11 @@ export class Customer extends Data {
         this.#nif = nif;
     }
 
-    get aboutNif() {
+    get nif() {
         return this.#nif;
     }
-    set aboutNif(cif) {
-        this.#nif = cif;
+    set nif(nif) {
+        this.#nif = nif;
     }
 
     toString() {

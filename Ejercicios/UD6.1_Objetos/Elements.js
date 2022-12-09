@@ -9,24 +9,24 @@ export class Elements {
         this.#quantity = quantity;
     }
 
-    get aboutDescription() {
+    get description() {
         return this.#description;
     }
-    set aboutDescription(description) {
+    set description(description) {
         this.#description = description;
     }
 
-    get aboutPrice() {
+    get price() {
         return this.#price;
     }
-    set aboutPrice(price) {
+    set price(price) {
         this.#price = price;
     }
 
-    get aboutQuantity() {
+    get quantity() {
         return this.#quantity;
     }
-    set aboutQuantity(quantity) {
+    set quantity(quantity) {
         this.#quantity = quantity;
     }
 
@@ -34,6 +34,6 @@ export class Elements {
         return "PRODUCTO: " + "\n" +
                 "Descripción: " + this.#description + '\n' +
                 "Precio: " + this.#price + '\n' + 
-                "Cantidad: " + this.#quantity;
+                "Cantidad: " + this.#quantity + '\n';
     }
 }

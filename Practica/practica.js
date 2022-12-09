@@ -1,0 +1,1 @@
+alert(Math.round((Math.random() * 2) * 10));

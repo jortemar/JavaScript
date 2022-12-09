@@ -1,3 +1,5 @@
+import {Data} from "./Data.js";
+
 export class Company extends Data {
     #cif;
 
@@ -6,15 +8,15 @@ export class Company extends Data {
         this.#cif = cif;
     }
 
-    get aboutCif() {
+    get cif() {
         return this.#cif;
     }
-    set aboutCif(cif) {
+    set cif(cif) {
         this.#cif = cif;
     }
 
     toString() {
-        return "EMPRESA \n" + 
+        return "EMPRESA: \n" + 
                 super.toString() + '\n' +
                 "CIF: " + this.#cif;
     }
