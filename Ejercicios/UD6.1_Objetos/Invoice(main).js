@@ -1,3 +1,7 @@
+/* La clase Data es padre de Company y Customer. Utilizaremos estas dos,
+además de la clase Elements, para inicializar como objetos algunas de
+las propiedades de la clase Invoice */
+
 import {Company} from "./Company.js";
 import {Customer} from "./Customer.js";
 import {Elements} from "./Elements.js";
@@ -12,18 +16,24 @@ class Invoice {
 
     constructor(iva, wayPay) {
         let precio, cantidad;
-        let productos = ["pimiento", "tomate", "chorizo"];
-        this.#company = new Company("Endesa", "Cura Navarro, 34, 7º C", 968857452, "B52145896");
+        const PRODUCTOS = ["Pimientos", "Tomate", "Chorizo", "Panceta", "Berenjenas", "Sandía", "Cebollas",
+                             "Coliflor", "Pepinos", "Mortadela", "Morcillas", "Espárragos", "Lechugas"];
+
+        this.#company = new Company("Alimentación San Ramón", "Cura Navarro, 34, Polígono La Estacada", 968857452, "B52145896");
         this.#customer = new Customer("José Ortega", "Calvario, 114", 968574782, "77788585F");
+
+        // Se generan 3 productos aleatorios en descripcion, precio y cantidad 
         for (let i = 0; i <= 2; i++) {
             precio = Math.floor((Math.random() * 4 + 1) * 100) / 100;
-            cantidad = Math.round((Math.random() * 2) * 10);
-            this.#elements.push(new Elements(productos[i], precio, cantidad));
+            cantidad = Math.ceil((Math.random() * 2) * 10);
+            this.#elements.push(new Elements(PRODUCTOS[Math.floor(Math.random() * 13)], precio, cantidad));
         }
 
         this.#iva = iva;
         this.#wayPay = wayPay;
-        this.#totalAmount = calcularPrecio();
+        /* Llamamos al método para que nos proporcione la
+        propiedad que nos falta por asignar ' this.#totalAmount ' */
+        this.calcularPrecio();
     }
 
     get company() {
@@ -41,7 +51,8 @@ class Invoice {
     }
 
     get elements() {
-        return this.#elements;
+        // este método sirve para quitar las comas al mostrar un array
+        return this.#elements.join("");
     }
     set elements(elements) {
         this.#elements = elements;
@@ -71,10 +82,11 @@ class Invoice {
     toString() {
         return this.#company + '\n' + '\n' +
                 this.#customer + '\n' + '\n' +
-                this.#elements + '\n' + '\n' +
+                "PRODUCTOS (precio sin IVA): " +
+                this.#elements.join("") + '\n' + '\n' +
                 "DETALLES DE PAGO: \n" +
                 "Importe Total: " + this.#totalAmount + '\n' +
-                "IVA: " + this.#iva + '\n' +
+                "IVA: " + this.#iva + '\n' + 
                 "Forma de Pago: " + this.#wayPay;
     }
 
@@ -94,22 +106,20 @@ class Invoice {
             default:
                 alert('El tipo de IVA introducido no es correcto');
         }
-        //precioFinal = this.#elements.quantity * (this.#elements.price + (this.#elements.price * (iva/100)));
         
-        for (let j = 0; j <= 2; j++) {  
-            precioFinal += this.#elements[j].quantity * (this.#elements[j].price + (this.#elements[j].price * (iva/100)));
+        // se le añade el IVA al precio bruto y se van sumando los precios netos de los distintos productos
+        for (let i = 0; i <= 2; i++) {  
+            precioFinal += this.#elements[i].quantity * (this.#elements[i].price + (this.#elements[i].price * (iva/100)));
         }
         
-        
-        return precioFinal.toFixed(2); 
+        this.#totalAmount = precioFinal.toFixed(2);
     }
 
     mostrarPrecio() {
-        alert("El importe neto de la factura es de " + this.#totalAmount + " euros");
+        alert("El importe total de la factura es de " + this.#totalAmount + " euros");
     }
 }
 
-const factura1 = new Invoice("superreducido", "efectivo");
+const factura1 = new Invoice("Superreducido", "Transferencia");
 alert(factura1);
 factura1.mostrarPrecio();
-alert(factura1.elements);

@@ -31,9 +31,6 @@ export class Elements {
     }
 
     toString() {
-        return "PRODUCTO: " + "\n" +
-                "Descripción: " + this.#description + '\n' +
-                "Precio: " + this.#price + '\n' + 
-                "Cantidad: " + this.#quantity + '\n';
+        return '\n' + this.#description + '  ---  ' + this.#price + ' €/kg' + '  ---  ' + this.#quantity + ' kilos';
     }
 }
