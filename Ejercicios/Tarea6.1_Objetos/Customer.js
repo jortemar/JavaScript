@@ -21,3 +21,11 @@ export class Customer extends Data {
                 "NIF: " + this.#nif;
     }
 }
+
+/*
+const customer1 = new Customer("Jose", "Calle Calvario", 958457852, "77744458P");
+alert(customer1);
+alert(customer1.nif);  // GETTER
+customer1.nif = "44265896R";  // SETTER
+alert(customer);
+*/

@@ -33,7 +33,7 @@ class Invoice {
         this.#wayPay = wayPay;
         /* Llamamos al método para que nos proporcione la
         propiedad que nos falta por asignar ' this.#totalAmount ' */
-        this.calcularPrecio();
+        this.#totalAmount = this.calcularPrecio();
     }
 
     get company() {
@@ -106,13 +106,13 @@ class Invoice {
             default:
                 alert('El tipo de IVA introducido no es correcto');
         }
-        
+
         // se le añade el IVA al precio bruto y se van sumando los precios netos de los distintos productos
         for (let i = 0; i <= 2; i++) {  
             precioFinal += this.#elements[i].quantity * (this.#elements[i].price + (this.#elements[i].price * (iva/100)));
         }
-        
-        this.#totalAmount = precioFinal.toFixed(2);
+    
+        return precioFinal.toFixed(2);
     }
 
     mostrarPrecio() {

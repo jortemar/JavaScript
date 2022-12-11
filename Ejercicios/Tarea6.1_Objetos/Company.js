@@ -21,3 +21,11 @@ export class Company extends Data {
                 "CIF: " + this.#cif;
     }
 }
+
+/*
+const company1 = new Company("Jose", "Calle Calvario", 958457852, "B4546875");
+alert(company1);
+alert(company1.cif);  // GETTER
+company1.cif = "T4525632";  // SETTER
+alert(company1);
+*/

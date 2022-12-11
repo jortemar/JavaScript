@@ -36,3 +36,11 @@ export class Data {
                 "Teléfono: " + this.#phone;
     }
 }
+
+/*
+const data1 = new Data("Jose", "Calvario", 4864685);
+alert(data1);
+alert(data1.address);  //GETTER
+data1.address = "Cura Navarro, 7";  //SETTER
+alert(data1);
+*/

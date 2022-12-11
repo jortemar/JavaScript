@@ -34,3 +34,11 @@ export class Elements {
         return '\n' + this.#description + '  ---  ' + this.#price + ' €/kg' + '  ---  ' + this.#quantity + ' kilos';
     }
 }
+
+/*
+const elements1 = new Elements("coche", 18500, 7);
+alert(elements1);
+alert(elements1.price);  // GETTER
+elements1.price = 27600;   // SETTER
+alert(elements1);
+*/

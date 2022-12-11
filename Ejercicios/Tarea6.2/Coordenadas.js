@@ -4,12 +4,12 @@ class Coordenadas {
 
     constructor(ejeX, ejeY) {
         if (isNaN(ejeX)) {
-            ejeX = 0;
+            this.#ejeX = 0;
         } else
             this.#ejeX = ejeX;
 
         if (isNaN(ejeY)) {
-            ejeY = 0;
+            this.#ejeY = 0;
         } else
             this.#ejeY = ejeY;
     }
