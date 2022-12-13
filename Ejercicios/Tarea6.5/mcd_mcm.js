@@ -94,7 +94,7 @@ class Fraccion {
     }
 }
 
-/*
+
 const Frac1 = new Fraccion(12, 6);
 alert(Frac1);
 alert(Frac1.numerador);
@@ -112,4 +112,3 @@ alert("Multiplicacion " + Fraccion.multiplicacion(Frac2, Frac3));
 alert("Division " + Fraccion.division(Frac2, Frac3));
 alert("Suma " + Fraccion.suma(Frac2, Frac3));
 alert("Resta " + Fraccion.resta(Frac2, Frac3)); 
-*/
