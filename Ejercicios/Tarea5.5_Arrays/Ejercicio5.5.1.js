@@ -15,14 +15,15 @@ mensajeSalida += "Array tras borrar las entradas anteriores: " + provincias + "<
 
 if (provincias.includes("Madrid")) {
     let indice = provincias.indexOf("Madrid");
-    provincias.splice(indice);
+    provincias.splice(indice,1);
 } else
     provincias.push("Madrid");
 
 mensajeSalida += "Array tras comprobar Madrid: " + provincias + "<br>";
 let cadena = "Método toString: " + provincias.toString() + "<br>";
 
-if (salida == 1) {
+if (salida == 1) {1
+
     document.write(cadena);
 } else
     console.log(cadena);
