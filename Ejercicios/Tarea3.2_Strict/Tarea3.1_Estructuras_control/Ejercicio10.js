@@ -49,7 +49,7 @@ if (numero < 0 || numero > 99999999) {
 } else {
     var letraGenerada = generarLetra(numero);
 
-    if (letraGenerada === letra) {
+    if (letraGenerada === letra.toUpperCase()) {
         alert("El DNI es correcto");
         console.log("El DNI es correcto");
         document.write("El DNI es correcto");

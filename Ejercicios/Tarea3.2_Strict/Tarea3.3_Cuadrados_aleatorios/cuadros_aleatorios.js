@@ -17,12 +17,12 @@ for (let i = 0; i < 2000; i++) {
     dibujarCuadrado(posX,posY,posZ,rojo,verde,azul);
 }
 
-//función opcional para reproducir una función indefinidamente con un intervalo determinado
+//función opcional para reproducir una función durante un intervalo determinado
 /*
 function cambiarColorFondo() {
     let myInterval = null;
     if (!myInterval) {
-        myInterval = setInterval(clonarCuadrado, 3000);
+        myInterval = setInterval(dibujarCuadrado, 5000); // el resultado de la función se mantiene durante 5 segundos
     }
 }
 

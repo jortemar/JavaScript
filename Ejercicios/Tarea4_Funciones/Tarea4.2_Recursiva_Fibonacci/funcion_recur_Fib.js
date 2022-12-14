@@ -23,4 +23,4 @@ function fibonacci(num) {
 }
 
 let posicion = parseInt(prompt(`Introduzca la posción del valor deseado de la secuencia de Fibonacci`));
-alert(`La posición número ${posicion} de la secuencia de Fibonacci es ${fibonacci(posicion)}`);
+alert(`La posición número ${posicion} de la secuencia de Fibonacci es ${fibonacci(posicion-1)}`);

@@ -12,8 +12,8 @@ e. (Cuando veamos arrays Si la fecha introducida es correcta mostraremos la fech
 con el siguiente formato:
 ---------------------------------------------------------------*/
 
-const MES_31 = [1, 3, 5, 7, 8, 10, 12];
-const MES_30 = [4, 6, 9, 11];
+const MES_31 = [0, 2, 4, 6, 7, 9, 11];
+const MES_30 = [3, 5, 8, 10];
 
 let dia, mes, año;                    
 let añoBisiesto = false;
@@ -24,16 +24,17 @@ do {
 
 do {
     mes = parseInt(prompt("Introduzca el mes con un número del 1 al 12"));
-} while (mes < 1 || mes > 12);    
+    mes--;
+} while (mes < 0 || mes > 11);    
 
 do {
     año = parseInt(prompt("Introduzca el año"));
 } while (año < 1);
 
 
-if (bisiesto(año) && mes == 2 && dia <= 29) {
+if (bisiesto(año) && mes == 1 && dia <= 29) {
     alert("La fecha introducida es: " + dia + " de " + asignarNombreMes(mes) + " de " + año);
-} else if ((MES_31.includes(mes) && dia <= 31) || (MES_30.includes(mes) && dia <= 30) || (mes == 2 && dia <= 28)) {
+} else if ((MES_31.includes(mes) && dia <= 31) || (MES_30.includes(mes) && dia <= 30) || (mes == 1 && dia <= 28)) {
     alert("La fecha introducida es: " + dia + " de " + asignarNombreMes(mes) + " de " + año);
 } else
     alert("La fecha es incorrecta");

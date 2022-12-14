@@ -15,7 +15,9 @@ for (i = 0; i < 10; i++) {
 }
 
 if (numeros.every(a => a >= 0 && a <= 10)) {
-    ordenado = numeros.sort((a, b) => b - a);
+    //ordenado = numeros.sort();  // array normal ordenado
+    ordenado = numeros.sort((a, b) => b - a);  // invierte el array ordenado
+    alert(ordenado);
     alert("La mejor nota es un " + ordenado[0]);
     alert("La peor nota es " + ordenado[ordenado.length - 1]);
     alert("La media de aprobados es " + calcMediaAprobados(numeros));

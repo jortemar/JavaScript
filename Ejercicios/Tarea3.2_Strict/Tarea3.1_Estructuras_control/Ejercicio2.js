@@ -18,7 +18,7 @@ do {
     valor = parseInt(cadena);
     contValores++;
 
-    if (valor%2 == 0) {
+    if (valor % 2 == 0) {
         contPares++;
     } else {
         contImpares++;
