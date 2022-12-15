@@ -126,7 +126,7 @@ const daw = new Ciclo();
 
 let num;
 
-// if (introducirContraseña()) {
+if (introducirContraseña()) {
     do {  
         do {
             num = parseInt(prompt("Elija una opción con un número del 0 al 10:\n\n" +
@@ -181,7 +181,7 @@ let num;
             }
         } while (num < 0 || num > 11);       
     } while (num != 0);
-// }
+}
     
 
 function introducirContraseña() {
