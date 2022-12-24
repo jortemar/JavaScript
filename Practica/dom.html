@@ -5,16 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Aunque se haya aplicado desde JS, html identifica el id en el párrafo al que se lo hemos colocado -->
+    <style>
+        #id_de_prueba {
+            color:red;  
+        }
+    </style>
 </head>
 <body>
 
-    <p id="parrafo">Mi primera práctica de DOM</p>
+    <p id="id_cualquiera">Mi primera práctica de DOM</p>
+    <p>Le coloco una id</p>
 
     <script type="text/javascript">
-        let parrafo = document.getElementById("parrafo");
-        let parrafo2 = document.getElementsByTagName('p');
+        let parrafo = document.getElementById("id_cualquiera"); //devuelve una cadena
+        let parrafo2 = document.getElementsByTagName('p');  //devuelve un array (realmente es una colección) con tantas posiciones como etiquetas p
+
+        parrafo2[1].id = "id_de_prueba"; //añadimos un id a la segunda etiqueta p (2ª posición del array)
+        parrafo.style.color = "blue";
+        parrafo.style.backgroundColor = "yellow";
+
         console.log(parrafo);
-        console.log(parrafo.innerText);
+        console.log(parrafo.innerText); //omite etiquetas. Solo texto
         console.log(parrafo2);
     </script>
 </body>
