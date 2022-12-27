@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Eventos</h1>
+    <button id="boton">Cambiar fondo</button>
+
+    <script type="text/javascript">
+        
+        function randomRGB() {
+            return Math.round(Math.random() * 255);
+        }
+
+        let botonElement = document.getElementById("boton");
+        //probar sustituyendo click por mousemove. Así se ejecutaría el evento solo con pasar el ratón por el botón
+        botonElement.addEventListener("click", function() {
+            let randomColor = [
+                randomRGB(),
+                randomRGB(),
+                randomRGB()
+            ];
+
+            document.body.style.backgroundColor = (`rgb(${randomColor})`);
+
+            //Imprime en consola los valores RGB 
+            console.log(randomColor);
+
+            //Imprime en pantalla insertando elementos p
+            /*    
+            let body = document.querySelector('body');
+            let pElement = document.createElement("p");
+            pElement.textContent = randomColor;
+            body.appendChild(pElement);
+            */
+        });
+
+        //le pedimos a la web que cuando escuche el evento crearEvento, se ejecute el código  
+        document.addEventListener("crearEvento", function(evento) {
+            console.log(evento);
+            console.log(evento.detail);
+        })
+        //creamos un objeto evento introduciendo como parámetro el nombre del evento al que lo queremos asociar
+        //el segundo parámetro es una propiedad nueva que le queremos añadir al objeto evento
+        let event = new CustomEvent("crearEvento", {'detail': 'Hola Mundo'});
+
+        //lanzamos el evento desde el objeto document. Se ejecutará nava más acceder a la web
+        //esto recibe como parámetro el objeto evento, que lleva implícito el evento crearEvento, lo 
+        //que hace que finalmente se ejecute la función
+        document.dispatchEvent(event);
+            
+    </script>
+</body>
+</html>

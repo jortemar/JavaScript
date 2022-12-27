@@ -7,14 +7,79 @@
     <title>Ejercicio DOM</title>
 </head>
 <body>
-    <section method = "POST" action = "./ejercicio.js">
-        <label for = "cajaTexto"> Texto </label>
-        <input id = "cajaTexto" type = "text">
-        <label for = "cajaNumero"> Numero </label>
-        <input id = "cajaNumero" type = "number">
-        <input type = "submit" value = "Enviar datos">
-    </section>
+
     
-    <!-- <script src="./ejercicio.js"></script> -->    
+    <ul id="lista">
+        <li id="elemento_1">item 1</li>
+        <li id="elemento_2">item 2</li>
+        <li id="elemento_3">item 3</li>
+        <li id="elemento_4">item 4</li>
+        <li id="elemento_5">item 5</li>
+        <li id="elemento_6">item 6</li>
+        <li id="elemento_7">item 7</li>
+        <li id="elemento_8">item 8</li>
+        <li id="elemento_9">item 9</li>
+        <li id="elemento_10">item 10</li>
+    </ul>
+    
+    <!--
+    <ul id="lista">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+        <li>item 6</li>
+        <li>item 7</li>
+        <li>item 8</li>
+        <li>item 9</li>
+        <li>item 10</li>
+    </ul>
+    -->
+    <script type="text/javascript">
+/*
+Una vez creada la lista crea un programa que pida al usuario un texto y un 
+número(del 1 al 10) que indique la posición del elemento de la lista, si el 
+número introducido es mayor que el número de elementos de la lista se insertará 
+al final de la misma, en caso contrario lo insertará en la posición indicada, 
+su estilo será negrita.
+*/
+
+        let texto = prompt("Introduzca un texto");
+        let numero = parseInt(prompt("Introduzca un número"));
+
+        let lista = document.getElementById('lista');
+        let li;
+
+        if (numero > lista.childElementCount) {
+            li = document.createElement('li');
+            li.textContent = texto;
+            li.id = "elemento_" + (lista.childElementCount + 1);
+            lista.appendChild(li);
+        } else {
+            let aux = lista.lastChild.textContent;
+            li = document.createElement('li');
+            li.id = "elemento_" + lista.childElementCount;
+            li.textContent = aux;
+            li = document.getElementById("elemento_" + numero);
+
+        }
+        alert("Hay " + lista.childElementCount + " elementos");
+        console.log(lista.childNodes);
+
+        //let li = document.getElementById('elemento_' + numero);
+        //console.log(lista.childNodes);
+
+        
+        
+
+        /*
+        console.log(lista.childNodes[3]);
+        console.log(lista.childNodes[7]);
+        */
+
+
+    </script>
+   
 </body>
 </html>

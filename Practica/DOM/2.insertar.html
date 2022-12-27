@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserciones HTML</title>
+</head>
+<body>
+    <ul id="lista">
+
+    </ul>
+
+    <script type="text/javascript">      
+        let tareas = [
+            "Hacer la colada",
+            "Planchar la ropa",
+            "Limpiar el suelo",
+            "Hacer la compra"
+        ];
+
+        let listaElement = document.querySelector('#lista');  //alternativa al getElementById()
+        let liElements;
+        for (let i = 0; i < tareas.length; i++) {
+            liElement = document.createElement('li');
+            liElement.id = 'elemento_' + i;
+            liElement.textContent = tareas[i];
+            listaElement.appendChild(liElement);
+        }        
+
+        // cuando pasen 2 segundos eliminará el elemento 1
+        setTimeout(function() {
+            let elementoAEliminar = document.getElementById('elemento_1');
+            listaElement.removeChild(elementoAEliminar);
+        }, 2000)
+
+    </script>
+</body>
+</html>
