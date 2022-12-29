@@ -10,16 +10,16 @@
 
     
     <ul id="lista">
-        <li id="elemento_1">item 1</li>
-        <li id="elemento_2">item 2</li>
-        <li id="elemento_3">item 3</li>
-        <li id="elemento_4">item 4</li>
-        <li id="elemento_5">item 5</li>
-        <li id="elemento_6">item 6</li>
-        <li id="elemento_7">item 7</li>
-        <li id="elemento_8">item 8</li>
-        <li id="elemento_9">item 9</li>
-        <li id="elemento_10">item 10</li>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+        <li>item 6</li>
+        <li>item 7</li>
+        <li>item 8</li>
+        <li>item 9</li>
+        <li>item 10</li>
     </ul>
     
     <!--
@@ -49,36 +49,35 @@ su estilo será negrita.
         let numero = parseInt(prompt("Introduzca un número"));
 
         let lista = document.getElementById('lista');
-        let li;
 
-        if (numero > lista.childElementCount) {
-            li = document.createElement('li');
-            li.textContent = texto;
-            li.id = "elemento_" + (lista.childElementCount + 1);
-            lista.appendChild(li);
-        } else {
-            let aux = lista.lastChild.textContent;
-            li = document.createElement('li');
-            li.id = "elemento_" + lista.childElementCount;
-            li.textContent = aux;
-            li = document.getElementById("elemento_" + numero);
+        let li = document.createElement('li');
+        li.textContent = texto;
+        lista.appendChild(li);
 
-        }
-        alert("Hay " + lista.childElementCount + " elementos");
-        console.log(lista.childNodes);
-
-        //let li = document.getElementById('elemento_' + numero);
-        //console.log(lista.childNodes);
-
-        
-        
+        let longitud = lista.children.length - 1;
 
         /*
-        console.log(lista.childNodes[3]);
-        console.log(lista.childNodes[7]);
+        lista.chi
+        lista.lastElementChild.textContent = "cosa";
         */
 
+        //lista.replaceChild(lista.children[longitud], li);
+        
 
+        console.log(lista.children.length);
+        //lista.replaceChild(lista.children[longitud], lista.children[longitud - 1]);
+
+        //lista.replaceChild(lista.children[longitud], lista.children[longitud - 1]);
+        let aux;
+        if (numero <= lista.childElementCount - 1) {
+            for (let i = numero - 1; i < longitud; i++) {      
+                aux = lista.children[i];
+                lista.replaceChild(li, lista.children[i]);
+                lista.appendChild(aux);            }
+        } 
+
+        console.log(lista.children.length);
+        
     </script>
    
 </body>
