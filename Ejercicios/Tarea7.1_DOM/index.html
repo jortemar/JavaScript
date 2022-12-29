@@ -7,8 +7,6 @@
     <title>Ejercicio DOM</title>
 </head>
 <body>
-
-    
     <ul id="lista">
         <li>item 1</li>
         <li>item 2</li>
@@ -22,20 +20,6 @@
         <li>item 10</li>
     </ul>
     
-    <!--
-    <ul id="lista">
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
-        <li>item 4</li>
-        <li>item 5</li>
-        <li>item 6</li>
-        <li>item 7</li>
-        <li>item 8</li>
-        <li>item 9</li>
-        <li>item 10</li>
-    </ul>
-    -->
     <script type="text/javascript">
 /*
 Una vez creada la lista crea un programa que pida al usuario un texto y un 
@@ -45,16 +29,37 @@ al final de la misma, en caso contrario lo insertará en la posición indicada,
 su estilo será negrita.
 */
 
-        let texto = prompt("Introduzca un texto");
-        let numero = parseInt(prompt("Introduzca un número"));
+        //let texto = prompt("Introduzca un texto");
+        //let numero = parseInt(prompt("Introduzca un número"));
 
-        let lista = document.getElementById('lista');
-
+        let lista = document.querySelector('ul');
         let li = document.createElement('li');
-        li.textContent = texto;
+        li.textContent = "chorizo";
         lista.appendChild(li);
+        let elementos = document.querySelectorAll('li');
 
-        let longitud = lista.children.length - 1;
+        console.log(elementos);
+        console.log(lista.childElementCount);
+        console.log(lista.children);
+        console.log(lista.children.length);
+        console.log(lista.children[3]);
+        console.log(lista.ch);
+
+        lista.replaceChild(lista.children[lista.children.length], lista.children[lista.children.length - 1]);
+
+
+        /*
+        lista[3].innerText = lista[2].innerText;
+        console.log("longitud: " + lista.length);
+        let li = document.createElement('li');
+        //li.textContent = texto;
+        console.log(lista.entries());
+        console.log("item " + lista.item(0).innerText);
+        //lista[10].innerText = "askdf";
+        console.log(lista.length);
+        //let longitud = lista.children.length - 1;
+        */
+
 
         /*
         lista.chi
@@ -64,10 +69,11 @@ su estilo será negrita.
         //lista.replaceChild(lista.children[longitud], li);
         
 
-        console.log(lista.children.length);
+        //console.log(lista.children.length);
         //lista.replaceChild(lista.children[longitud], lista.children[longitud - 1]);
 
         //lista.replaceChild(lista.children[longitud], lista.children[longitud - 1]);
+        /*
         let aux;
         if (numero <= lista.childElementCount - 1) {
             for (let i = numero - 1; i < longitud; i++) {      
@@ -77,7 +83,7 @@ su estilo será negrita.
         } 
 
         console.log(lista.children.length);
-        
+        */
     </script>
    
 </body>
