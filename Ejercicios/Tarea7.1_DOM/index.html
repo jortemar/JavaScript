@@ -31,21 +31,18 @@
         }
         let lista = document.querySelector('ul');
         let longitud = lista.children.length;
-        let li = document.createElement('li');
-        //li.innerText = texto;
-        lista.appendChild(li);
+        lista.appendChild(document.createElement('li'));
 
         if (numero <= longitud) {
-            //let aux = lista.children[longitud].innerText;
             for (let i = longitud; i > numero; i--) {
                 lista.children[i].innerText = lista.children[i - 1].innerText;
             }
             lista.children[numero].innerText = texto;
             lista.children[numero].style.fontWeight = 'bold';
-        } else 
+        } else {
             lista.children[longitud].innerText = texto;
             lista.children[longitud].style.fontWeight = 'bold';
-
+        }
     </script>
 
 </body>
