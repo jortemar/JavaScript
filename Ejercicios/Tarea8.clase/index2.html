@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--p*50>lorem-->
+    <ul>
+        <li>ipsum</li>
+        <li>dolor</li>
+        <li>ipsum</li>
+            <ul>
+                <li>ipsum</li>
+                <li>dolor</li>
+            </ul>
+    </ul>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure ipsa ipsum voluptatibus laudantium mollitia, magni aliquam, earum exercitationem tempore fugiat possimus, consectetur beatae amet magnam unde quas hic! Cumque, cupiditate?</p>
+    <p>Dolore molestias maxime atque officia delectus quis, corporis eius aliquid, laudantium iusto dignissimos eligendi voluptates culpa odio provident suscipit soluta id illum rerum maiores inventore tenetur exercitationem. Ipsam, est rerum.</p>
+    <p>Laborum, ipsum voluptas, at a eligendi ex ab dolorem harum accusamus sapiente earum beatae provident asperiores ipsam praesentium eos pariatur fugiat veritatis minima consectetur illum eum nam. Saepe, voluptates suscipit.</p>
+    <p>Dicta, non dolorem. Quae dolor dicta tenetur odio nihil, illum doloremque! Neque id blanditiis porro? Atque adipisci fugit deserunt aliquam! Asperiores delectus expedita enim placeat impedit doloribus, voluptatum culpa voluptate!</p>
+    <p>Numquam iste, delectus mollitia dolore aut voluptatum consequatur incidunt error dolorum aliquam enim quam, vel alias autem consequuntur blanditiis ipsam itaque similique nobis quaerat. Vero et nobis a omnis. Unde?</p>
+    <script>
+        function marcarPalabra(elemento, palabra) {
+            let texto = elemento.textContent; //obtengo contenido de cada nodo como texto plano sin interpretar. si tiene otros nodos anidados..... (no sé qué mas)
+            //alert(texto);
+            //comprobamos si la palabra está en el elemento
+            let pos = texto.indexOf(palabra);
+            if(pos != -1) {
+                let expReg = new RegExp(palabra, "g"); //el flag "g" indica todas las coincidencias, no solo la primera (probar con "gi", creo que admite mayusc y minusc)
+                //con la expresión regular se van a marcar todas las ocurrencias
+                elemento.innerHTML = elemento.innerHTML.replace(expReg, "<mark>" + palabra + "</mark>");
+                //elemento.innerHTML = elemento.innerHTML.replace(palabra, "<mark>" + palabra + "</mark>");
+                //return true;
+            } 
+        }
+
+        function buscarTextoEnElement(elemento, palabra) {
+            if(!elemento.children) return;
+            
+            for (let hijo of elemento.children) {
+                marcarPalabra(hijo, palabra);
+            }
+        }
+
+        let texto = prompt("Escribe la palabra a marcar");
+
+        if(texto) {
+            buscarTextoEnElemento(document.body, texto);
+        }
+
+    </script>
+</body>
+</html>

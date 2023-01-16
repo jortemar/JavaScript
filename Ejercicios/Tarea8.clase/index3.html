@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        let data = {
+            "Pescados": {
+                "Atún": {},
+                "salmón": {}
+            },
+
+            "Árboles": {
+                "Gigantes": {
+                    "Secuoya": {},
+                    "Oak": {}
+                },
+                "Florales": {
+                    "Almendro": {},
+                    "Magnolia": {},
+                    "Cerezo": {}
+                }
+            }
+        }
+
+        function createTree(container, obj) {
+            container.append(createTreeDom(obj));
+        }
+
+        function createTreeDom(obj) {
+            if(!Object.keys(obj).length) return;
+
+            let ul = document.querySelector('ul');
+
+            for (let key in obj) {
+                let li = document.createElement('li');
+                //faltan cosas
+            }
+
+        }
+
+
+        function mostrarObjeto(obj) { //función recursiva para recorrer todo el árbol
+            //condición salida
+            if(!Object.keys(obj).length) return;
+            alert(Object.keys(obj).length);
+            for(let key in obj) {
+                alert(key);
+                //mostrarObjeto(obj[key]);
+            }
+        };
+
+
+        let container = document.querySelector('#container');
+        createTree(container, data);
+        mostrarObjeto(data);
+
+        alert(JSON.stringify(data,2));
+        console.log(JSON.stringify(data,null,2));
+
+    </script>
+</body>
+</html>
