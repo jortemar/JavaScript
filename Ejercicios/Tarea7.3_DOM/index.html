@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 7.3</title>
+    <style>
+        table, tr, td {
+            border-collapse:collapse;
+            border:3px;
+            border-color:black;
+        }
+    </style>
+</head>
+<body>
+    <div>Users:</div>
+
+    <ul>
+        <li>John</li>
+        <li>Pete</li>
+    </ul>
+
+    <table>
+        <tr>
+            <td>1:1</td>
+            <td>2:1</td>
+            <td>3:1</td>
+            <td>4:1</td>
+            <td>5:1</td>
+        </tr>
+        <tr>
+            <td>1:2</td>
+            <td>2:2</td>
+            <td>3:2</td>
+            <td>4:2</td>
+            <td>5:2</td>
+        </tr>
+        <tr>
+            <td>1:3</td>
+            <td>2:3</td>
+            <td>3:3</td>
+            <td>4:3</td>
+            <td>5:3</td>
+        </tr>
+        <tr>
+            <td>1:4</td>
+            <td>2:4</td>
+            <td>3:4</td>
+            <td>4:4</td>
+            <td>5:4</td>
+        </tr>
+        <tr>
+            <td>1:5</td>
+            <td>2:5</td>
+            <td>3:5</td>
+            <td>4:5</td>
+            <td>5:5</td>
+        </tr>
+    </table>
+    
+
+    <script type="text/javascript">
+        //Nodo <div>
+        let div = document.querySelector('div');        
+        console.log(div.innerHTML);
+        
+        //Nodo <ul>
+        let ul = document.querySelector('ul');
+        console.log(ul.children[0].innerText);
+        console.log(ul.children[1].innerText);
+
+        //Segundo nodo <li> (con Pete)
+        console.log(ul.children[1]);
+        
+        
+        /* Esta sentencia siempre es null porque lastChild hace referencia al último nodo,
+        por lo que nextSibling siempre buscará un nodo que no existe */
+        console.log(ul.lastChild.nextSibling);
+        /* Este caso es distinto, porque con children[] hacemos referencia al objeto Element hijo correspondiente.
+        Con children[0] accedemos al primer Element pero no al primer nodo. Para lograrlo podemos usar previousSibling */
+        console.log(ul.children[0].previousSibling);
+
+        //Función para pintar tabla
+
+        //let tabla = document.getElementById('tabla');
+        function pintarRojo() {
+            let tabla = document.querySelectorAll('table');
+
+            for (i = 1; i < tabla.row; i++) {
+
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 DOM</title>
+</head>
+
+<body>
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+        <li>item 6</li>
+        <li>item 7</li>
+        <li>item 8</li>
+        <li>item 9</li>
+        <li>item 10</li>
+    </ul>
+
+    <label>Introduzca el texto</label><br>
+    <input id="texto" type="text" value="<< Escriba aquí... >>"/><br><br>
+    <label>Introduzca la posición</label><br>
+    <input id="numero" type="number" value="1"/><br><br>
+    <button id="insertarNodo">Insertar nodo</button>
+
+    <script type="text/javascript">
+
+        let boton = document.querySelector('#insertarNodo');
+
+        boton.addEventListener("click", function() {
+            let texto = document.querySelector('#texto').value;
+            let numero = document.querySelector('#numero').value;
+
+            if (numero < 0) {  
+                h3 = document.createElement('h3');
+                h3.innerText = "El número introducido no puede ser negativo";
+                document.body.appendChild(h3);        
+                return;        
+            }
+
+            let boton = document.querySelector('#insertarNodo');
+            numero--;
+            let lista = document.querySelector('ul');
+            let longitud = lista.children.length;
+            let li = document.createElement('li');
+            li.innerText = texto;
+            lista.appendChild(li);
+
+            if (numero <= longitud) {
+                let aux = lista.children[longitud].innerText;
+                for (let i = longitud; i > numero; i--) {
+                    lista.children[i].innerText = lista.children[i - 1].innerText;
+                }
+                lista.children[numero].innerText = aux;
+                lista.children[numero].style.fontWeight = 'bold';
+            } else 
+                lista.children[longitud].style.fontWeight = 'bold';
+        });   
+
+    </script>
+
+</body>
+
+</html>
