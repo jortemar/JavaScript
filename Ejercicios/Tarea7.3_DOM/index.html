@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarea 7.3</title>
     <style>
-        table, tr, td {
+        table, td {
+            border:1px solid black;
             border-collapse:collapse;
-            border:3px;
-            border-color:black;
         }
     </style>
 </head>
@@ -81,16 +80,19 @@
         Con children[0] accedemos al primer Element pero no al primer nodo. Para lograrlo podemos usar previousSibling */
         console.log(ul.children[0].previousSibling);
 
+
         //Función para pintar tabla
-
-        //let tabla = document.getElementById('tabla');
         function pintarRojo() {
-            let tabla = document.querySelectorAll('table');
+            //let tabla = document.querySelector('table');
+            let tabla = document.body.children[2];
 
-            for (i = 1; i < tabla.row; i++) {
-
+            for (let i = 0; i < tabla.rows.length; i++) {
+                let row = tabla.rows[i];
+                row.cells[i].style.backgroundColor = 'red';
             }
         }
+
+        pintarRojo();
 
     </script>
 </body>
