@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 7.4</title>
+</head>
+<body>
+  
+    <ul>
+        <li>ipsum</li>
+        <li>dolor</li>
+        <li>ipsum</li>
+        <ul>
+            <li>ipspum</li>
+            <li>dolor</li>
+        </ul>
+    </ul>
+
+    <!-- p*10>lorem -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, unde fugiat. Quaerat quidem blanditiis voluptatem ut alias laboriosam aspernatur deleniti placeat sapiente sequi ullam quo quam iure corrupti, architecto provident.</p>
+    <p>Eveniet unde veritatis sunt, magni dignissimos temporibus voluptatem quas est asperiores, quod ipsam. Eius deserunt architecto corrupti repellendus provident repellat quasi quod sit possimus, earum aperiam ipsa nihil quas ea.</p>
+    <p>Nemo quam porro dolore magni accusamus praesentium. Dolorum in ad ipsa error minima, eius fugiat praesentium aliquid et repudiandae iusto fuga rerum accusantium dignissimos. Doloribus eius impedit blanditiis nesciunt necessitatibus.</p>
+    <p>Reiciendis quam ex eum id ipsam repellat necessitatibus dolor possimus, delectus aut quas, quisquam totam error facilis tempore? Nulla, eos sit officia praesentium ipsum ut assumenda perspiciatis provident repudiandae quidem.</p>
+    <p>Officiis iusto voluptates sapiente! Iste explicabo minus eveniet magnam! Ipsa aperiam veniam natus autem illo dolorem! Molestiae quisquam voluptate in laboriosam consequatur obcaecati animi velit repellat non ducimus! Laboriosam, numquam?</p>
+    <p>Vero numquam necessitatibus illo sunt labore laboriosam dolore iusto ab repellendus nemo facilis quis, debitis temporibus consequatur voluptas voluptates ex impedit cumque harum, nulla, quia suscipit minus? Nulla, doloremque qui.</p>
+    <p>Voluptates enim illum accusantium dicta porro. Eveniet quae quos fugiat saepe error quia nisi deleniti delectus dolor dolores hic accusamus voluptate labore cum voluptas aut, ullam earum corporis dicta repudiandae.</p>
+    <p>Repellendus alias ea velit atque quo, tenetur quod doloribus unde nostrum iure quas a eos voluptatem nemo cum explicabo repudiandae debitis? Quis accusantium odio libero quibusdam reiciendis laborum veniam nam?</p>
+    <p>Pariatur a ex cupiditate ducimus accusamus minus eveniet laboriosam facere, fugiat ab numquam, quia obcaecati beatae rerum quidem placeat earum corrupti quo ipsam harum iusto animi illo dolorum nihil. Perspiciatis!</p>
+    <p>Dolor amet ab magnam vel sint eius repellendus non dolorum facilis error, similique ipsum autem, maiores ullam doloremque ex. Perferendis sint accusantium iusto eligendi doloremque, incidunt labore esse repellat qui.</p>
+
+    <script type="text/javascript">
+
+        let palabra = prompt("Introduzca una palabra");
+        for (i = 0; i <= document.body.children.length; i++) {
+            if (document.body.children[i].textContent.indexOf(palabra)) {
+                let expReg = new RegExp(palabra, 'g');
+                document.body.children[i].innerHTML = document.body.children[i].innerHTML.replace(expReg, '<mark>' + palabra + '</mark>');
+            }
+        }
+        
+    </script>
+</body>
+</html>
