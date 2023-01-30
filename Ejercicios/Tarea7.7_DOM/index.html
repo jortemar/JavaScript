@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 7.7</title>
+</head>
+<body>
+    <ul>
+        <li>Animales</li>
+        <ul>
+            <li>Mamíferos</li>
+            <ul>
+                <li>Vacas</li>
+                <li>Monos</li>
+                <li>Perros</li>
+                <li>Tigres</li>
+            </ul>
+            <li>Otros</li>
+            <ul>
+                <li>Serpientes</li>
+                <li>Aves</li>
+                <li>Lagartos</li>
+            </ul>
+        </ul>
+    </ul>
+
+    <script>
+        let ul = document.querySelector('ul');
+        let lis = document.getElementsByTagName('li');
+        console.log(ul);
+        console.log(ul[1]);
+
+        lis[0].nextElementSibling;
+        lis[0].innerText
+
+        
+        // ESTO DE LOS LIS CREO QUE NO VALE. NO PUEDO CONTAR HIJOS PORQUE LOS HIJOS SON DE LOS LUS
+
+        function contarLis(elemento) {
+
+            for (i = 0; i < elemento.length; i++) {
+                console.log(elemento[i]);
+                if (!elemento[i].nextElementSibling.childElementCount) {
+                    console.log(elemento[i]);
+                    let contador = elemento[i].parentElement.childElementCount;
+                    console.log(contador);
+                    elemento[i].parentElement.innerText += ' [' + contador + '] ';
+                    console.log(elemento[i]);
+                }    
+                
+                /*
+                let contador = 1;
+                for (j = 0; j < elemento[i].parentNode.)
+                if (elemento[i].nextElementSibling) {
+                    contador++;
+                }
+                */
+                         
+
+            }
+        }
+
+        contarLis(lis);
+        contarLis(ul);
+
+
+
+
+        /*
+        console.log(document.getElementsByTagName('li'));
+        console.log(ul.getElementsByTagName('li'));
+        console.log(ul.getElementsByTagName('li').length);
+
+        console.log(ul);
+        console.log(ul.childNodes);
+        console.log(ul.hasChildNodes());
+        console.log(ul.children);
+        console.log(ul.children.length);
+        console.log(ul.childElementCount);
+       
+        console.log(ul.children[0]);
+        console.log(ul.childNodes[0]);
+        console.log(ul.children[0].hasChildNodes());
+        console.log(ul.children[0].childElementCount);
+        console.log(ul.children[0].children);
+
+        console.log(ul.children[1]);
+        console.log(ul.childNodes[1]);
+        console.log(ul.children[1].hasChildNodes());
+        console.log(ul.children[1].childElementCount);
+        console.log(ul.children[1].children);
+
+        */
+
+        /*
+        for (let key in animales) {
+            console.log(key);
+            if (animales[key]) {
+                li.innerText += "[" + animales[key].length + 
+            }
+            li.innerText = key;
+            ul.appendChild(li);
+            console.log(ul);
+            completeTree(objeto[key]);             
+        }
+        */
+
+        let animales = {
+            "Animales": {
+                "Mamíferos": {
+                    "Vacas": {},
+                    "Monos": {},
+                    "Perros": {},
+                    "Tigres": {}
+                },
+                "Otros": {
+                    "Serpientes": {},
+                    "Aves": {},
+                    "Lagartos": {}
+                }
+            }
+        };
+    </script>
+</body>
+</html>

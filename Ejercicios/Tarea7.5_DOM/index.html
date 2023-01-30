@@ -17,20 +17,8 @@
             li = document.createElement('li');
             li.innerText = texto;
             ul.appendChild(li);
-        } while (texto.trim().length != 0 || document.addEventListener('keyup', function(event) {
-                                                    if (event.keyCode === 27) {
-                                                        return true;
-                                                    }
-                                                }, false));
-        
-        /*
-        document.addEventListener('keydown', function(event) {
-            if (event.keyCode === 27) {
-                return true;
-            }
-        });
-        */
-        
+        } while (texto.trim().length != 0);
+                
         ul.removeChild(ul.lastChild);
         document.body.appendChild(ul);
 
