@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 8.1</title>
+    <style>
+        #tapiz{
+            /* position: static; */
+            height:600px;
+        }
+        #raton{
+            top: 0;
+            transition: all 0.5s;
+        }
+        .container {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <div class="container" id="tapiz">
+                <img src="raton.jpg" style="position:fixed" width="75px" height="auto" id="raton"></img>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const tapiz = document.querySelector("#tapiz");
+        let raton = document.querySelector("#raton");
+        tapiz.addEventListener("mousemove", function(evento){
+            raton.style.left = evento.clientX-50+"px";
+            raton.style.top = evento.clientY-50+"px";
+        });
+    </script>
+</body>
+</html>

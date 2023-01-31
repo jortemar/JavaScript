@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 8.6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row bg-dark">
+            <p class="h1 text-white text-center">Informe de incidencia</p>
+        </div>
+        <div class="row mt-5 align-items-center">
+            <div class="col-md-6">
+                <img src="img/warehouse.jpg" alt="" class="img-fluid img-thumbnail">
+            </div>
+            <div class="col-md-6">
+                <form action="action_page.php">
+                    <fieldset class="form-group border p-3">
+                    <legend class="w-auto px-2">Registrar incidencia</legend>
+                    <div class="mb-3 px-3">
+                      <label class="form-label">Tipo de incidencia</label>
+                      <select class="form-select">
+                        <option selected>Seleccionar incidencia</option>
+                        <option value="1">Distribuci&oacute;n</option>
+                        <option value="2">Oficina</option>
+                        <option value="3">Producci&oacute;n</option>
+                      </select>
+                      
+                    </div>
+                    <div class="mb-3 px-3">
+                      <label for="exampleInputPassword1" class="form-label">Número de serie</label>
+                      <input type="text" class="form-control" id="numero_serie">
+                    </div>
+                    <div class="mb-3 px-3">
+                        <button class="btn btn-outline-secondary" type="button">Mostrar Descripción</button>
+                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+
+        let formulario = document.querySelector("form");
+        let for_numero_serie = document.querySelector("#numero_serie");
+        function validarFormulario(evento){
+            let exp = /^[0-9]{3}[A-Z]{4}[12A]$/; //3 digitos, 4 leras mayúsculas y termina en 1, 2 o en A
+            if (exp.test(for_numero_serie.value) == false)
+                alert("Campo incorrecto");
+            else
+                alert("validación correcta");
+            evento.preventDefault(); 
+        }
+        formulario.addEventListener("submit", validarFormulario);
+    </script>
+</body>
+</html>
