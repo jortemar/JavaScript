@@ -23,16 +23,20 @@
     <div>
         <div>
             <div class="container" id="tapiz">
-                <img src="raton.jpg" style="position:fixed" width="75px" height="auto" id="raton"></img>
+                <img src="raton.png" style="position:fixed" width="75px" height="auto" id="raton"></img>
             </div>
         </div>
     </div>
     <script type="text/javascript">
         const tapiz = document.querySelector("#tapiz");
         let raton = document.querySelector("#raton");
-        tapiz.addEventListener("mousemove", function(evento){
-            raton.style.left = evento.clientX-50+"px";
-            raton.style.top = evento.clientY-50+"px";
+
+        /* La posición relativa pjor defecto del ratón con respecto a la imagen, es arriba a la izquierda.
+        Pero podemos desplazarnos a través de los ejes X e Y modificando los valores de evento.clientX o evento.clientY.
+        Podemos ir probando hasta que quede a nuestro gusto. En mi caso, así se queda centrado (45 ,35) */
+        tapiz.addEventListener("mousemove", event => {
+            raton.style.left = event.clientX - 45 + "px";
+            raton.style.top = event.clientY - 35 + "px";
         });
     </script>
 </body>

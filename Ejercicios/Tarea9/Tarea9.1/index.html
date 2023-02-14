@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 9.1</title>
+</head>
+<body>
+
+    <script>
+        
+        function temporizador(seg) {
+            let promesa = new Promise((resolver, rechazar) => {
+            setTimeout(() => {
+                resolver("Tiempo concluido");
+            }, seg*1000);
+            //si pasa el doble de tiempo del que debería, daría error
+            setTimeout(() => {
+                rechazar("El tiempo no va bien");
+            }, seg*2000);
+            });
+
+            promesa.then((respuesta) => {
+                console.log(respuesta);
+            }).catch((error) => {
+                console.log("Error: " + error);
+            })
+        }
+
+        let seg = parseInt(prompt("Introduzca el número de segundos"));
+        while (seg < 0 || isNaN(seg)) {
+            seg = parseInt(prompt("Debe introducir un número mayor que 0"));
+        };
+
+        temporizador(seg);
+        
+    </script>
+
+</body>
+</html>
