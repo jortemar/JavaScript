@@ -44,96 +44,22 @@ El resultado:
 
     <script>
         let ul = document.querySelector('ul');
-        let lis = document.getElementsByTagName('li');
-        /*
         console.log(ul);
-        console.log(ul.children);
-
-        console.log(ul.children[0]);
-        console.log(ul.children[1]);
-
-        console.log(ul.children[1].children);
-        console.log(ul.children[1].children[1].children);
-        */
+        console.log(ul.length);
+        console.log(ul.innerText);
 
         
+        function crearObjeto(elemento) {
+            if (ul.hasChildNodes()) {
 
-        
-        // ESTO DE LOS LIS CREO QUE NO VALE. NO PUEDO CONTAR HIJOS PORQUE LOS HIJOS SON DE LOS LUS
-        
-        function contarLis(elemento) {
-            /*
-            if (elemento.childElementCount) {
-                for (i = 0; i < elemento.children.length; i++) {
-                    console.log(elemento.children[i]);
-                    contarLis(elemento.children[i]);
-                }*/
-                /*
-                console.log(elemento.children);
-                console.log(elemento.children[1]);
-                console.log(elemento.children[1].parentElement);
-                console.log(elemento.children[1].parentElement.parentElement);
-                */
-/*
-            } else {
-                console.log(elemento);
             }
-            */
 
-            /*
-            if (elemento.children.length > 0) {              
-                for (i = 0; i < elemento.children.length; i++) {
-                    console.log(elemento.children[i]);
-                    console.log(elemento.children[i].parentElement);
-                    contarLis(elemento.children[i]);
-                }
-            }
-            */
-            
-            for (i = 0; i < elemento.length; i++) {
-                console.log(elemento[i]);
-                if (!elemento[i].nextElementSibling.childElementCount) {
-                    console.log(elemento[i]);
-                    let contador = elemento[i].parentElement.childElementCount;
-                    console.log(contador);
-                    elemento[i].parentElement.parentElement.parentElement.innerText += ' [' + contador + '] ';
-                    console.log(elemento[i]);
-                }    
-            }
             
         }
 
-        contarLis(lis);
-        //contarLis(ul);
+        crearObjeto(ul);
+        
 
-
-
-
-        /*
-        console.log(document.getElementsByTagName('li'));
-        console.log(ul.getElementsByTagName('li'));
-        console.log(ul.getElementsByTagName('li').length);
-
-        console.log(ul);
-        console.log(ul.childNodes);
-        console.log(ul.hasChildNodes());
-        console.log(ul.children);
-        console.log(ul.children.length);
-        console.log(ul.childElementCount);
-       
-        console.log(ul.children[0]);
-        console.log(ul.childNodes[0]);
-        console.log(ul.children[0].hasChildNodes());
-        console.log(ul.children[0].childElementCount);
-        console.log(ul.children[0].children);
-
-        console.log(ul.children[1]);
-        console.log(ul.childNodes[1]);
-        console.log(ul.children[1].hasChildNodes());
-        console.log(ul.children[1].childElementCount);
-        console.log(ul.children[1].children);
-
-        */
 
         /*
         for (let key in animales) {
@@ -163,6 +89,8 @@ El resultado:
                 }
             }
         };
+
+        console.log(animales);
     </script>
 </body>
 </html>

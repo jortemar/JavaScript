@@ -1,4 +1,5 @@
-<!-- Se trata de pedir una palabra y remarcar todas las apariciones de la palabra en el texto del documento marcándolas con la etiqueta mark -->
+<!-- Se trata de pedir una palabra y remarcar todas las apariciones de la palabra
+    en el texto del documento marcándolas con la etiqueta mark -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,9 +36,9 @@
     <script type="text/javascript">
 
         let palabra = prompt("Introduzca una palabra");
+        let expReg = new RegExp(palabra, 'g');
         for (i = 0; i <= document.body.children.length; i++) {
             if (document.body.children[i].textContent.indexOf(palabra)) {
-                let expReg = new RegExp(palabra, 'g');
                 document.body.children[i].innerHTML = document.body.children[i].innerHTML.replace(expReg, '<mark>' + palabra + '</mark>');
             }
         }
