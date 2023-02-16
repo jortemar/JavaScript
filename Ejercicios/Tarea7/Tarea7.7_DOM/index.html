@@ -45,18 +45,23 @@ El resultado:
     <script>
         let ul = document.querySelector('ul');
         console.log(ul);
-        console.log(ul.length);
-        console.log(ul.innerText);
-
+        console.log(ul.children);
+        console.log(ul.children.length);
         
-        function crearObjeto(elemento) {
+        function crearObjeto(ul) {
             if (ul.hasChildNodes()) {
-
+                let texto = ul.children[0].innerText;
+                //creamos el objeto inicial
+                const objeto = {};
+                //le metemos el innerText del siguiente li
+                objeto[texto] = new Object();
+                
+                console.log(objeto);
+                console.log(Object.keys(objeto));
+                
             }
-
-            
         }
-
+        
         crearObjeto(ul);
         
 
