@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 7.7 Julián Martín-Serrano Daponte</title>
+</head>
+<body>
+    <ul>
+        <li>Animales
+            <ul>
+                <li>Mamiferos
+                    <ul>
+                        <li>Vacas</li>
+                        <li>Monos</li>
+                        <li>Perros</li>
+                        <li>Tigres</li>
+                        <li>Personas
+                            <ul>
+                                <li>Jose
+                                    <ul>
+                                        <li>Ortega</li>
+                                        <li>Córdoba</li>
+                                    </ul>
+                                </li>
+                                <li>Martinez</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Otros
+                    <ul>
+                        <li>Serpientes
+                            <ul>
+                                <li>Víbora</li>
+                                <li>Cobra</li>
+                            </ul>
+                        </li>
+                        <li>Aves
+                            <ul>
+                                <li>Buitre</li>
+                                <li>Paloma</li>
+                                <li>Cotorra</li>
+                                <li>Loro</li>
+                                <li>Jilguero</li>
+                            </ul>
+                        </li>
+                        <li>Lagartos</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        let todosli = document.querySelectorAll('li');
+        for (let li of todosli) {
+            let contador = li.querySelectorAll(`li`).length;
+            if (!contador) continue;
+            li.firstChild.data += '[' + contador + ']';
+        }
+    </script>
+</body>
+</html>
