@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarea 8.6</title>
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
@@ -12,9 +12,10 @@
         <div class="row bg-dark">
             <p class="h1 text-white text-center">Informe de incidencia</p>
         </div>
+        <div id="alert"></div>
         <div class="row mt-5 align-items-center">
             <div class="col-md-6">
-                <img src="Mediq_Sverige_Kungsbacka_warehouse.jpg" alt="" class="img-fluid img-thumbnail">
+                <img src="img/almacen.jpg" alt="" class="img-fluid img-thumbnail" id="imgchange">
             </div>
             <div class="col-md-6">
                 <form action="action_page.php">
@@ -35,15 +36,15 @@
                       <input type="text" class="form-control" id="numero_serie">
                     </div>
                     <div class="mb-3 px-3">
-                        <button class="btn btn-outline-secondary" type="button">Mostrar Descripción</button>
+                        <button class="btn btn-outline-secondary" type="button" id="mostrar">Descripción</button>
                         
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                    <div class="mb-3" id="texto">
+                        <label for="exampleFormControlTextarea1" class="form-label">descripcion de la incidencia</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="sub">Submit</button>
                     </fieldset>
                 </form>
             </div>
@@ -52,17 +53,46 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script>
 
-        let formulario = document.querySelector("form");
-        let for_numero_serie = document.querySelector("#numero_serie");
+        let formulario=document.querySelector("form");
+        let for_numero_serie=document.querySelector("#numero_serie");
+        let alert=document.querySelector("#alert");
+        
         function validarFormulario(evento){
-            let exp = /^[0-9]{3}[A-Z]{4}[12A]$/; //3 digitos, 4 leras mayúsculas y termina en 1, 2 o en A
-            if (exp.test(for_numero_serie.value) == false)
-                alert("Campo incorrecto");
-            else
-                alert("validación correcta");
-            evento.preventDefault(); 
+            let exp=/^[0-9]{3}[A-Z]{4}[12A]$/; //3 digitos, 4 leras mayúsculas y termina en 1, 2 o en A
+            if(exp.test(for_numero_serie.value)==false){
+                alert.innerHTML="<div class='alert alert-danger' role='alert'>El número de serie no es correcto</div>";
+                evento.preventDefault();
+            }
         }
-        formulario.addEventListener("submit", validarFormulario);
+        formulario.addEventListener("submit",validarFormulario);
+    </script>
+    <script>
+        let img=document.querySelector("#imgchange");
+        //hacer que cuando se cambie el select cambie la imagen
+        let select=document.querySelector("select");
+        select.addEventListener("change",function(){
+            if(select.value==1)
+                img.src="img/almacen.jpg";
+            else if(select.value==2)
+                img.src="img/oficinas.jpg";
+            else if(select.value==3)
+                img.src="img/nissan_08.jpg";
+        });
+
+    </script>
+    <script>
+       let mo = document.querySelector("#mostrar");
+       let text = document.querySelector("#texto");
+         text.style.display="none";
+         mo.addEventListener("click",function(){
+              if(text.style.display=="none"){
+                text.style.display="block";
+              } else{
+                 text.style.display="none";
+              }
+                
+            });
+
     </script>
 </body>
 </html>
